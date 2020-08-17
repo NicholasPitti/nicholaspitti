@@ -1,5 +1,5 @@
-<!DOCTYPE html> <!--nice color  #bb4343;"-->
-<html lang="en"><!--declared language for accesibility--->
+<!DOCTYPE html> <!--nice <hr class="mx-5">"-->
+<html lang="en"><!--thicc line <div class="container bg-light mb-2"><div class="row card"></div></div>--->
 	<head>
 	        <title>Portfolio</title>
 		<link rel="shortcut icon" type="image/x-icon" href="#blank" />
@@ -14,30 +14,12 @@
 		
 	<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 
-	<link rel="stylesheet" href="style.css" >
+	<link rel="stylesheet" href="nickstyle.css" >
 		<style>
-		body{
-		font-family:'Montserrat',sans-serif;		
-		}
-
-		li.important{
-			list-style-type: none !important;
-			text-transform: uppercase;
-		}
-		.awesome{
-			color: orange;
-			font-weight: bold;
-		}
-		/*Spacing:  https://www.w3schools.com/bootstrap4/bootstrap_utilities.asp*/
-@media (min-width: 576px){		.card-columns{ column-count: 1;	}		}
-@media (min-width: 768px){		.card-columns{ column-count: 2;	}		}
-@media (min-width: 992px){		.card-columns{ column-count: 3;	}		}
-/*@media (min-width: 1200px){		.card-columns{ column-count: 4;	}		WHY DOESNT THIS WORK?}*/
-
 		</style>
 	</head>
 	<body data-spy="scroll" data-target="#scrollspy" data-offset="200">
-<div class="jumbotron-fluid font-weight-bold pl-5 py-5" style="background-image:url('images/cactus.jpg');">
+<div class="jumbotron-fluid font-weight-bold pl-5 py-5" style="background: linear-gradient(0deg, rgba(254,254,254,1) 0%, rgba(186,186,186,1) 42%);">
 	<div class="display-4">Hey I'm Nick!</div>
 	<div class="display-4">Take a look at what I've made.</div>
 
@@ -47,35 +29,115 @@
 	<nav id="scrollspy" class="navbar navbar-light bg-light text-light font-weight-bold">
 		<h1 class="navbar-brand font-weight-bold">Nicholas Pittí</h1>
 		<ul class="nav nav-pills">
-		  <li class="nav-item">
-			<a class="nav-link" href="#about" alt="link to about section">About</a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="#certification" alt="link to certification section">Certification</a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="#portfolio" alt="link to portfolio section">Portfolio</a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="#hire" alt="link to hire section">Hire</a>
-		  </li>
+			<li class="nav-item">
+				<a class="nav-link" href="#portfolio" alt="link to portfolio section">Portfolio</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#certification" alt="link to certification section">Certification</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#about" alt="link to about section">About</a>
+			</li>	
+			<li class="nav-item">
+				<a class="nav-link" href="#hire" alt="link to hire section">Hire</a>
+			</li>
 		</ul>
 	  </nav>
 	</div>
 
-<div class="ml-3 mt-3">	
-	<h4 id="about">About</h4>
-	<hr>
-	<p>I'm a student in my fourth year at the Universidad Tecnológica de Panamá. I'm a native English and Spanish speaker. 
-	</p>
-	<div class="bg-secondary text-light text-center py-3" style="background: url('images/prism.png');padding:30%;">
-		<img class="card mx-auto img-fluid" src="images/me.png" alt="Picture of me">
-	</div>
+	<br>
 
+	<div class="mt-3 display-none text-muted" style="background: url('images/prism.png');">	
+		<h4 id="portfolio" class="d-flex text-light justify-content-end mr-5 py-3">Portfolio</h4>
+	<div class="card-columns text-right mx-2 ">
+		<div class="card">
+			<a target="_blank" href="parallax.htm">
+				<img class="card-img-top" src="images/prism.png" alt="Thumbnail of parralax effect page I made">
+			</a>
+			<div class="card-body">
+				<h5 class="card-title">Animations</h5>
+			</div>
+		</div>
+	
+			<div class="card">
+				<a target="_blank" href="theme.htm">
+					<img class="card-img-top" src="images/themethumbnail.png" alt="Thumbnail of page with diverse theming">
+				</a>
+				<div class="card-body">
+					<h5 class="card-title">Bootstrap Design</h5>
+				</div>
+			</div>
+
+			<div class="card">
+					<a target="_blank" href="animate.htm">
+						<img class="card-img-top" src="images/anithumbnail.png" alt="Thumbnail of page with javascript animations">
+					</a>
+					<div class="card-body">
+						<h5 class="card-title">Management Software Landing Page</h5>
+					</div>
+				</div>
+
+			<div class="card">
+					<a target="_blank" href="animate.htm">
+						<img class="card-img-top" src="images/anithumbnail.png" alt="Thumbnail of page with javascript animations">
+					</a>
+					<div class="card-body">
+						<h5 class="card-title">Management Software Landing Page</h5>
+					</div>
+				</div>
+
+			<div class="card">
+					<a target="_blank" href="animate.htm">
+						<img class="card-img-top" src="images/anithumbnail.png" alt="Thumbnail of page with javascript animations">
+					</a>
+					<div class="card-body">
+						<h5 class="card-title">Management Software Landing Page</h5>
+					</div>
+				</div>
+
+				<div class="card">
+						<a target="_blank" href="animate.htm">
+							<img class="card-img-top" src="images/anithumbnail.png" alt="Thumbnail of page with javascript animations">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">Management Software Landing Page</h5>
+						</div>
+					</div>
+
+
+		</div>
+  </div>
+
+  <br>
+  <br>
+  <div class="mt-3">
+	<h4 id="certification" class="text-muted d-flex justify-content-end mr-5">Certification</h4>	
+
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col">
+				<img class="img-fluid" src="images/FrontEndCertification.PNG" alt="Free Code Camp Front End Certification">
+			</div>
+			<div class="col">
+				<img class="img-fluid" src="images/CourseraPhp.png" alt="Coursera Building Web Applications in PHP">
+			</div>
+		</div>
+	</div>	
+</div>
+
+<br>
+<br>
+<div class="mt-3">	
+	<h4 id="about" class="text-muted d-flex justify-content-end mr-5">About</h4>
+	
 	<div class="card m-3 bg-dark">
 	<h5 class="my-2 mx-auto text-light">Impossible List</h5>
-	<div class="container bg-light mb-2"><div class="row card"></div></div>
-	<p class="mx-2 text-light text-justify">Inspired by Thomas Frank I've made a list of goals that matter to me. I know that completing each one will move me closer to understanding and achieving my aim of giving back creatively to the world and working on something that impacts as many people as I can.</p>
+	<br>
+	<p class="mx-5 text-light text-justify">I'm a student in my fourth year at the Universidad Tecnológica de Panamá.
+		I'm a native English and Spanish speaker. <br><br>
+		 Inspired by Thomas Frank I've made a list of goals that matter to me.
+		  I know that completing each one will move me closer to understanding and achieving my aim of giving back creatively
+		   to the world and working on something that impacts as many people as I can.</p>
 		<button class="btn btn-primary text-show" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" onclick="changetext(this)">
 		  Show
 		</button>
@@ -84,14 +146,55 @@
 		<div class="card card-body">
 			<ul>
 					<li class="important"><b>Current Focus</b></li>
-					<li>Make it a habit to practice math, starting with differencial equations, for 4hrs a week</li>
-					<li>Learn to sew</li>
-					<li>Front Squat 112lbs <span class="awesome">(Master the hang power clean)</span></li>
-					<li>Learn Git(Collaborate with a friend who knows git)</li>
+					<li>Strech and excercise for posture 20min daily for 1 month</li>
+					<li>Train new puppy at 4pm and track training on instagram</li>
+					<li>Learn how to draw pixel art</li>
+					<li>Learn how to merge in any scenario gitbash/github</li>
+					
+					<hr>
+
+					<li class="important"><b>Recent</b></li>
+					<li>Made a game in Unity</li>
+					<li>Made a 2D animation</li>
+					<li>Made a 3D animation</li>
+					<li>Learn basic git commands and VIM interface</li>
+					<hr>
+					
+					<li class="important"><b>life goals</b></li>
+					<li>Weigh 150lbs and have lean muscle<span class="awesome">(Currently 130lbs)</span></li><!--class="awesome"-->
+					<li>Support wildlife conservation</li>
+					<li>Support reforestation</li>
+					<li>Support cleaning of ocean pollution</li>
+					
+					<hr>
+
+					<li class="important"><b>fitness/health</b></li>
+					<li>Front Squat 112lbs<span class="awesome">(Master the hang power clean)</span></li>
+					<li>Succesfully excecute hanging ab exercise</li>
+					<li>Learn hang power clean<span class="awesome">(DONE)</span></li>
+					<hr>
+
+					<li class="important"><b>professional</b></li>
+					<li>Learn NODE.js and REST api</li>
+					<li>Make a full stack website using HTML,CSS,Javascript,PHP,Node,MySQL</li>
+					<li>Learn advanced VB.net</li>
+					<li>Get hired as a Web developer</li>
+					<li>Get hired as a Fullstack developer</li>
 
 					<hr>
 
-					<li class="important"><b>last 5</b></li>
+					<li class="important"><b>habit</b></li>
+					<li>Learn a new pasta or soup recipe weekly<span class="awesome">(2 Month Straight)</span></li>
+					<li>Make someone laugh once a day for a week</li>
+					<li>Try to make bulk prepping food viable <span class="awesome">(Requires That I Move Out)</span></li>
+					<hr>
+
+					<li class="important"><b>creative</b></li>
+					<li>Draw a manga</li>
+					<li>Make a video game with my friends using Unity and Github</li>
+					<li>Learn 5 watercolor techniques that i actually want to use</li>
+					<li>Draw and watercolor something from pinterest with more than 2 colors</li>
+					<li>Draw everything in one of my Pinterest sections<span class="awesome">(Include Sliding Gallery)</span></li>
 					<li>Draw my brother a christmas gift <span class="awesome">(Streak 2)</span>
 						<div class="container">
 							<div class="row">
@@ -104,95 +207,39 @@
 							</div>
 						</div>
 						</li>
-					<li>Get straight A's in 3rd year 1st semestre</li>
-					<li>Learn hang power clean</li>
-					<li>Do 5 pull ups</li>
-					<li>Make a portfolio page and deploy with github</li>
+					<hr>
+
+					<li class="important"><b>skill</b></li>
+					<li>Learn to organize my gmail</li>
+					<li>Learn basic Japanese</li>
+					<li>Learn basic German</li>
+					<li>Learn basic Portuguese</li>
+					<li>Learn to tailor shirts,button ups and pants<span class="awesome">(DONE)</span></li>
+					<hr>
+
+					<li class="important"><b>fun/crazy</b></li>
+					<li>Eat at taco bell <span class="awesome">(Its been a long time)</span></li>
+					<li>Eat at Famous Daves'</li>
+					<li>Find a rock climbing gym near my home and get a membership</li>
+					<li>Go to any convention</li>
+					<li>Feed some farm animals</li>
+					<li>Feed an elephant</li>
+					<li>Ride a pig</li>
+					<li>Handle a frog or toad with my bare hands</li>
+					<li>Handle a big lizard with my bare hands</li>
+					<li>Handle a snake with my bare hands</li>
+					<li>Handle a tarantula with my bare hands</li>
+					<li>Swim with sharks</li>
 					
 					<hr>
-					
-					<li class="important"><b>life goals</b></li>
-					<li>Get 8 A's in my fourth year at the UTP</li>
-					<li>Get 10 A's in my fifth year at the UTP</li>
-					<li>Give a seminar at the university</li>
-					<li>Weigh 150lbs and have lean muscle<span class="awesome">(Currently 130lbs)</span></li><!--class="awesome"-->
-					<li>Support wildlife conservation</li>
-					<li>Support reforestation</li>
-					<li>Support cleaning of ocean pollution</li>
-					
+
+					<li class="important"><b>video games</b></li>
+					<li>Win a video game tournament</li>
+					<li>Make a Youtube series on the game I make</li>
 					<hr>
 
-					<li class="important"><b>fitness/health</b></li>
-					<li>Find a way to train abs without back pain<span class="awesome">(sideplanks are easy but cause some shoulder discomfort)</span></li>
-					<li>Learn to cook Soup</li>
-					<li>Learn to make a homemade spicy sauce</li>
-
-					<hr>
-
-					<li class="important"><b>professional</b></li>
-					<li>Learn NODE.js and REST api</li>
-					<li>Make a full stack website using HTML,CSS,Node,MySQL</li>
-					<li>Learn advanced VB.net</li>
-					<li>Get hired as a Web developer</li>
-					<li>Get hired as a Fullstack developer</li>
-
-					<hr>
-
-					<li class="important"><b>habit</b></li>
-					<li>Wake up and jump out of bed with no hesitation for a month straight</li>
-					<li>Fall asleep in less than 5min for a week straight</li>
-					<li>Do something nice for someone once a week for 2 months</li>
-					<li>Do all my chores on one day of a week for a month straight</li>
-					<li>Make one big drawing per week for a month</li>
-					<li>Make one small drawing once a day for a month</li>
-					<li>Meditate once a day for a month</li>
-					<li>Make someone laugh once a day for a week</li>
-					<li>Try to make bulk prepping food viable <span class="awesome">(It should be tastier than my current options)</span></li>
-					<hr>
-
-					<li class="important"><b>creative</b></li>
-				<li>Draw a manga</li>
-				<li>Make a video game with my friends using Unity and Github</li>
-				<li>Learn 5 watercolor techniques</li>
-				<li>Draw and watercolor something from pinterest</li>
-				<li>Draw everything in any of my Pinterest sections</li>
-					
-				<hr>
-
-				<li class="important"><b>skill</b></li>
-				<li>Learn 5 useful gmail managing tricks</li>
-				<li>Learn basic Japanese</li>
-				<li>Learn basic German</li>
-				<li>Learn basic Portuguese</li>
-				<li>Learn to tailor shirts,button ups and pants</li>
-				
-				<hr>
-
-				<li class="important"><b>fun/crazy</b></li>
-				<li>Eat at taco bell <span class="awesome">(Its been a long time)</span></li>
-				<li>Eat at Famous Daves'</li>
-				<li>Find a rock climbing gym near my home and get a membership</li>
-				<li>Go to any convention</li>
-				<li>Feed some farm animals</li>
-				<li>Feed an elephant</li>
-				<li>Ride a pig</li>
-				<li>Handle a frog or toad with my bare hands</li>
-				<li>Handle a big lizard with my bare hands</li>
-				<li>Handle a snake with my bare hands</li>
-				<li>Handle a tarantula with my bare hands</li>
-				<li>Swim with sharks</li>
-				
-				<hr>
-
-				<li class="important"><b>video games</b></li>
-				<li>Win a Smash Ultimate tournament</li>
-				<li>Get Platinum Rank in Rocket League</li>
-				<li>Host a free Smash Ultimate tournament in my house</li>
-				
-				<hr>
-
-				<li class="important"><b>travel goals</b></li>
-				<li>Visit my best friend in Japan</li>
+					<li class="important"><b>travel goals</b></li>
+					<li>Visit my best friend in Japan</li>
 			</ul>
 
 		</div>
@@ -200,66 +247,30 @@
 	  </div>
 
 </div>
+<br>
+<br>
 
-<div class="ml-3 mt-3">
-	<h4 id="certification">Certification</h4>	
-	<hr>
-
-	<img class="img-fluid" src="images/FrontEndCertification.PNG" alt="Free Code Camp Front End Certification">
-
-</div>
-
-<div class="ml-3 mt-3 display-none">	
-		<h4 id="portfolio">Portfolio</h4>
-		<hr>
-	<div class="card-columns text-right text-light">
-		<div class="card bg-info">
-			<a target="_blank" href="parallax.htm">
-				<img class="card-img-top" src="images/parallaxthumbnail.jpg" alt="Thumbnail of parralax effect page I made">
-			</a>
-			<div class="card-body bg-info">
-				<h5 class="card-title">Parrallax</h5>
-			</div>
+<footer class="text-light" style="background: url('images/prism.png');">
+	<div class="py-3">
+		<h4 id="hire" class="ml-5">Hire</h4>
+		<div class="pt-3 pl-3 card offset-2 ani" style="background-color: rgba(0,123,255,0.2)"> 
+			<p>You can find me on <a href="https://www.fiver.com" title="Link to Fiverr"><img style="width:60px;" src="images/fiverrLogoT.png"></a> as nicholaspitti 
+				<span class=""></span> (<i>nick.a.pitti@gmail.com</i>)</p>
 		</div>
-	
-			<div class="card bg-info">
-				<a target="_blank" href="theme.htm">
-					<img class="card-img-top" src="images/themethumbnail.png" alt="Thumbnail of page with diverse theming">
-				</a>
-				<div class="card-body bg-info">
-					<h5 class="card-title">Themes</h5>
-				</div>
-			</div>
+	</div>
+</footer>
 
-		
-				<div class="card bg-info">
-					<a target="_blank" href="animate.htm">
-						<img class="card-img-top" src="images/anithumbnail.png" alt="Thumbnail of page with javascript animations">
-					</a>
-					<div class="card-body bg-info">
-						<h5 class="card-title">Animation Javascript</h5>
-					</div>
-				</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenMax.min.js" 
+integrity="sha512-ia1SI1AX8rsFOd2+7ZKAcdYIQR3dNWYWWtINJs3L65GF4vZhXyNu96SOd3MYTp5ZSOXoGl/kwWjUdqOXe1osIA==" 
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TimelineMax.min.js" 
+integrity="sha512-Fien2rCWak/F9Cb8pFz2Yu5U1ZmHFousYCTWFCDM6A/iaAqwXywT7Old2dthLQ02If7PigKQbIgzKx17an7o/A==" 
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script><!--the order matters-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
+<script src="app.js"></script>
 
-		</div>
-  </div>
-
-<div class="ml-3 mt-3">
-	<h4 id="hire">Hire</h4>
-	<hr>
-	<p>Contact: <i>Nick.A.Pitti@gmail.com</i></p>
-	<p>You can find me on <a href="https://www.fiver.com" title="Link to Fiverr">Fiverr</a> as nicholaspitti</p>
-</div>
-
-
-<footer style="background: url('images/prism.png'); height:200px;"></footer>
 <script>
-
-function changetext(elem) {
-if (elem.textContent=="Hide") elem.textContent="Show";
-else elem.textContent="Hide";
-}
-
 
 </script>
 	</body>

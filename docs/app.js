@@ -4,5 +4,5 @@ gsap.to(".ani",{
         toggleActions:"restart none none none"
     },
     x:-80,
-    duration:0.8
+    duration:1
 });
