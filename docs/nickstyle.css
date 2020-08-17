@@ -1,0 +1,25 @@
+
+
+.grid-container{
+    display:grid;
+    height: auto; 
+    padding:5px;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 1px;
+    
+    }
+    .grid-item{
+    display: inline-grid;
+    background-color:white;
+    padding: 20px;
+    height:200px;
+    }
+    
+    @media (max-width:720px){
+        .grid-container{grid-template-columns:auto auto auto auto;}
+    }
+
+    @media (max-width:540px){
+        .grid-container{grid-template-columns:auto auto auto;}
+    }
+    
