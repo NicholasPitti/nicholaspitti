@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Text Analyze</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <br>
+            <br>
+        <textarea id="txt"></textarea>
+        <textarea id="display">you can drag this down before testing  weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</textarea>
+        <button onclick="start()"> Test </button>
+            
+        <footer>
+            <i>   
+                <b>Functions</b>
+                <ol>
+                    <li>textarea for user</li>
+                    <li>made btn for checking consonants and vowels with a sw condition</li>
+                    <li>use string functions so counters ignore spaces</li>                    
+                    <li>forEach inside a forEach so that it can analyse multiple words at once</li>
+                    <li>move all the console logs to display in 2nd TextArea</li>
+                    <li><b>doesnt check for periods/questionmarks/exclamationmarks</b></li>
+                    <li><b>doesnt have sentenceCounter</b></li>
+                </ol>
+            </i>
+            <i>
+                <b>Concepts</b>
+                <ul>
+                    <li>switch grouped condition for multiple strings</li>
+                    <li>JS String Methods</li>
+                    <li>forEach array method</li>
+                    <li>function inside a function is neccesary. as well as a foreach inside a foreach</li>
+                    <li>next >> use json and php getPost+forms/inputTypes and arrays</li>
+                </ul>
+            </i>
+
+            <i>
+                <b>Rules as Limitations</b>
+                <ul>
+                    <li>html and js</li>
+                    <li>5 or less functions</li>
+                    <li>less than 200 lines of code</li>
+                    <li>no libraries or frameworks</li>
+                </ul>
+            </i>            
+        </footer>
+    </body>
+    <script> //am i supposed to put my counters here or at function start?.....is this less performance efficient?
+        var globalString
+        var wordsRemovingSpace
+        var wordsIndividual
+        var wordsSentences
+
+        function start(){
+            var totalLetters=0//lets you test again without reloading page
+            var consonantCount=0
+            var vowelCount=0
+            var numCount=0
+            let outputContent=[]
+
+            //////////////////////////////////////////////////////////////////////////////
+            globalString=document.getElementById("txt").value
+            //////////////////////////////////////////////////////////////////////////////
+
+            outputContent[0]=("Type:"+typeof(globalString))
+            globalString=globalString.trim() //removes spaces b4 and after
+            wordsRemovingSpace=globalString.split(" ")//turns string into array
+            outputContent[1]="\n"+ "Content:"+globalString
+            wordsRemovingSpace.forEach(counterFunction)//checks for vowels,consonants&numbers forEach item of index n
+            outputContent[2]="\n"+"Consonants:"+consonantCount
+            outputContent[3]="\n"+"Vowels:"+vowelCount
+            outputContent[4]="\n"+"Numbers:"+numCount
+            outputContent[5]="\n"+"Total letters:"+totalLetters            
+            if(globalString==""){
+                outputContent[6]="\n"+"Amount of words"+"0"
+            }else{
+            outputContent[6]="\n"+"Amount of words"+wordsRemovingSpace.length
+            }
+            ////////////////////////////////////////////////////////////////////////////////
+            document.getElementById("display").innerHTML=outputContent
+            ////////////////////////////////////////////////////////////////////////////////3
+
+            function counterFunction(item,index){//item enters this function through "forEach" therefore first entry now needs to be split
+                totalLetters=totalLetters+(item.length)
+                wordsIndividual=item.split("") //had to make sure this was splitting words into eacah letter
+                wordsIndividual.forEach(vowelAndconsonantCounter)//forEach inside of a forEach
+                function vowelAndconsonantCounter(itemB,indexB){
+                    switch(itemB){
+                    case  "a":
+                    case  "e":
+                    case  "i":
+                    case  "o":
+                    case  "u":
+                        vowelCount++
+                        break
+                    case  "0":
+                    case  "1":
+                    case  "2":
+                    case  "3":
+                    case  "4":
+                    case  "5":
+                    case  "6":
+                    case  "7":
+                    case  "8":
+                    case  "9":
+                        numCount++ //not working ### also why do 3periods count as 1 consonant
+                        break
+                    default:
+                        consonantCount++
+                    }
+                }
+            }
+
+        }
+
+    </script>
+</html>

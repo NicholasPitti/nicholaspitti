@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Stopwatch</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <header style="font-size:24px; text-align:center;">
+            <b>Stopwatch</b>
+        </header>
+
+        <main>
+            <div style="text-align: center;">
+                <p>seconds:</p> 
+                <p id="sec">0</p> 
+                <p>minutes:</p> 
+                <p id="min">0</p> 
+                <p id="timeout"></p>
+                <button onclick="start()">Start</button>
+                <button onclick="reset()">Reset</button>
+            </div>
+            <br>
+        </main>
+
+        <footer>
+            <i>
+                <ol>
+                    <b>Functions</b>
+                    <li>add from 0 up to 10 seconds</li>
+                    <li>resets seconds to 0</li>
+                    <li>add 1 to minutes</li>
+                    <li>display timeout message on completing 2minutes or less for testing purposes</li>
+                    <li style="color:red;">seconds and minutes as an array</li>
+                </ol>
+            </i>
+            <i>
+                <ul>
+                    <b>Concepts</b>
+                    <li>variable types, assignment, initialization & scope</li>
+                    <li>functions & JS timing</li>
+                    <li>do while loops not advised</li>
+                    <li>separating logic & visuals by using updateView</li>
+                </ul>
+            </i>
+
+            <i>
+                <ul>
+                    <b>Rules as Limitations</b>
+                    <li>html and js</li>
+                    <li>5 or less functions</li>
+                    <li>less than 200 lines of code</li>
+                    <li>no libraries or frameworks</li>
+                </ul>
+            </i>            
+        </footer>
+        
+        <script>
+            var seconds=0;//why not let
+            var minutes=0;     //sw -> array
+            var intervalId=null;//why null
+            //pressing the btn calls the function
+            function start(){
+                intervalId = setInterval(watchTick, 1000); //constructing asigning funciton?
+            }
+            
+            function watchTick(){
+                seconds++;
+                if (seconds==3){
+                    seconds=0; //#var name second instead of seconds
+                    minutes++;
+                }
+                if(minutes==2){ //own func would be better
+                    document.getElementById("timeout").innerHTML="2 minutes";
+                }
+                updateView();
+            }
+            
+            function updateView(){  
+                document.getElementById("sec").innerHTML=parseInt(seconds);           
+                document.getElementById("min").innerHTML=parseInt(minutes);                
+            }     
+
+            function reset(){
+                console.log(document.getElementById("timeout").textContent);//
+                seconds=0;
+                minutes=0;
+                clearInterval(intervalId);
+                updateView();
+            }
+              
+/*
+your understanding of fluff in the boilerplate?
+style="color: magenta">why use sass when live server 
+extension exists
+array better for primitives
+array const?
+object vs array convenience,use cases, functions? 
+https://towardsdatascience.com/practical-javascript-arrays-vs-objects-3c1f895907bd
+*/
+
+        </script>
+
+    </body>
+</html>
