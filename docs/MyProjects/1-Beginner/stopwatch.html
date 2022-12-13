@@ -7,7 +7,7 @@
         <title>Stopwatch</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="greybackground.css">
     </head>
     <body>
         <header style="font-size:24px; text-align:center;">
@@ -31,11 +31,13 @@
             <i>
                 <ol>
                     <b>Functions</b>
-                    <li>add from 0 up to 10 seconds</li>
+                    <li>add from 0 up to 60 seconds</li>
                     <li>resets seconds to 0</li>
-                    <li>add 1 to minutes</li>
-                    <li>display timeout message on completing 2minutes or less for testing purposes</li>
-                    <li style="color:red;">seconds and minutes as an array</li>
+                    <li>add 1 to minute</li>
+                    <li>display timeout message</li>
+                    <li>reset clears the seconds field <b> but doesnt reset incremets</b></li>
+                    <li style="color:mediumseagreen;">Click start multiple times to increase speed of increment</li>
+
                 </ol>
             </i>
             <i>
@@ -70,12 +72,12 @@
             
             function watchTick(){
                 seconds++;
-                if (seconds==3){
+                if (seconds==60){
                     seconds=0; //#var name second instead of seconds
                     minutes++;
                 }
-                if(minutes==2){ //own func would be better
-                    document.getElementById("timeout").innerHTML="2 minutes";
+                if(minutes==1){ //own func would be better
+                    document.getElementById("timeout").innerHTML="A minute has passed";
                 }
                 updateView();
             }

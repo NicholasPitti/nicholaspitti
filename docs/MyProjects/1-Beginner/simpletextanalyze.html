@@ -7,13 +7,19 @@
         <title>Text Analyze</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="greybackground.css">
     </head>
     <body>
+        <header style="font-size:24px; text-align:center;">
+            <b>Simple Text Analyzer</b>
+        </header>
         <br>
             <br>
-        <textarea id="txt"></textarea>
-        <textarea id="display">you can drag this down before testing  weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</textarea>
+        <p>Type anything into text box</p>
+        <textarea id="txt">example</textarea>
+        <br>
+        <p>Output of analysis</p>
+        <textarea id="display">you can drag this down</textarea>
         <button onclick="start()"> Test </button>
             
         <footer>
@@ -21,11 +27,11 @@
                 <b>Functions</b>
                 <ol>
                     <li>textarea for user</li>
-                    <li>made btn for checking consonants and vowels with a sw condition</li>
+                    <li>made btn for checking consonants and vowels with a switch condition</li>
                     <li>use string functions so counters ignore spaces</li>                    
                     <li>forEach inside a forEach so that it can analyse multiple words at once</li>
-                    <li>move all the console logs to display in 2nd TextArea</li>
-                    <li><b>doesnt check for periods/questionmarks/exclamationmarks</b></li>
+                    <li>display output in 2nd TextArea</li>
+                    <li><b>doesnt check for periods/questio nmarks/exclamation marks</b></li>
                     <li><b>doesnt have sentenceCounter</b></li>
                 </ol>
             </i>
@@ -35,8 +41,8 @@
                     <li>switch grouped condition for multiple strings</li>
                     <li>JS String Methods</li>
                     <li>forEach array method</li>
-                    <li>function inside a function is neccesary. as well as a foreach inside a foreach</li>
-                    <li>next >> use json and php getPost+forms/inputTypes and arrays</li>
+                    <li>function inside a function is neccesary, as well as a foreach inside a foreach</li>
+                    <li>next time use json and php getPost+forms/inputTypes and arrays</li>
                 </ul>
             </i>
 
@@ -51,11 +57,12 @@
             </i>            
         </footer>
     </body>
-    <script> //am i supposed to put my counters here or at function start?.....is this less performance efficient?
+    <script> 
         var globalString
         var wordsRemovingSpace
-        var wordsIndividual
+        var wordsIndividual //let is block scoped.. var is funciont scoped
         var wordsSentences
+/*Variable declared by let cannot be redeclared and must be declared before use whereas variables declared with var keyword are hoisted.*/
 
         function start(){
             var totalLetters=0//lets you test again without reloading page
@@ -109,7 +116,7 @@
                     case  "7":
                     case  "8":
                     case  "9":
-                        numCount++ //not working ### also why do 3periods count as 1 consonant
+                        numCount++
                         break
                     default:
                         consonantCount++
