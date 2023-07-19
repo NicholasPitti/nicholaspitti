@@ -35,8 +35,8 @@
                     <li>resets seconds to 0</li>
                     <li>add 1 to minute</li>
                     <li>display timeout message</li>
-                    <li>reset clears the seconds field <b> but doesnt reset incremets</b></li>
-                    <li style="color:mediumseagreen;">Click start multiple times to increase speed of increment</li>
+                    <li>reset clears the seconds field</li>
+                    <li style="color:mediumseagreen;">Clicking start multiple times accumulates increments</li>
 
                 </ol>
             </i>
@@ -88,23 +88,15 @@
             }     
 
             function reset(){
+                clearInterval(intervalId);
+                intervalID=null; //set interval id to null after clearing interval, for cases when start is pressed more than once
                 console.log(document.getElementById("timeout").textContent);//
                 seconds=0;
                 minutes=0;
-                clearInterval(intervalId);
+                document.getElementById("timeout").innerHTML = "";
                 updateView();
             }
-              
-/*
-your understanding of fluff in the boilerplate?
-style="color: magenta">why use sass when live server 
-extension exists
-array better for primitives
-array const?
-object vs array convenience,use cases, functions? 
-https://towardsdatascience.com/practical-javascript-arrays-vs-objects-3c1f895907bd
-*/
-
+        
         </script>
 
     </body>
