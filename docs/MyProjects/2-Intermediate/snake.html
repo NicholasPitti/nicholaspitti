@@ -1,38 +1,100 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
+<head>
+  <title>GreenSock 3D Cube Animation</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #cube {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-style: preserve-3d;
+    }
+
+    .face {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: rgba(255, 0, 0, 0.6);
+      border: 2px solid #fff;
+    }
+
+    .front {
+      transform: translateZ(50px);
+    }
+
+    .back {
+      transform: rotateY(180deg) translateZ(50px);
+    }
+
+    .left {
+      transform: rotateY(-90deg) translateZ(50px);
+    }
+
+    .right {
+      transform: rotateY(90deg) translateZ(50px);
+    }
+
+    .top {
+      transform: rotateX(90deg) translateZ(50px);
+    }
+
+    .bottom {
+      transform: rotateX(-90deg) translateZ(50px);
+    }
+  </style>
+</head>
+<body>
+  <h1>Track the cube with your mouse</h1>
+  <h1>To see full path you can place your mouse in the middle of the starting position and keep it there</h1>
+  <h1>Need to add a reset for the color and mouse hover on completion</h1>
+  <h1>Need to add difficulties</h1>
+  <h1><u><a href="#">For now refresh page to restart</a></u></h1>
+  <div id="cube">
+    <div class="face front"></div>
+    <div class="face back"></div>
+    <div class="face left"></div>
+    <div class="face right"></div>
+    <div class="face top"></div>
+    <div class="face bottom"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script>
+       const cube = document.getElementById("cube");
+       const timeline = gsap.timeline({ paused: true, onComplete: changeColor, onCompleteParams: [cube]});
+
+    timeline.to("#cube", {
+      duration:3, //determines how difficult to track
+      ease: "expo.out", //bounce.out
+      rotationY: 360,
+      rotationX: 360,
+      translateZ: '100px',
+      //this is what makes it move out of the starting position
+      transformOrigin: "0 0 250px",
+      //
+    });
+
+    function changeColor(element) {
+  // Change the background color of the cube when the animation is complete
+  //element.style.backgroundColor = '#008000';
+  element.style.backgroundColor = 'rgba(0, 0, 0, 2)';
+}
 
 
-        <ol>
-            <li>snake food</li>
-            <li>snake</li>
-            <li>make snake bigger</li>
-            <li>move snake</li>
-            <li>start game button</li>
-            <li>control snake w user input if{KeyDown}</li>
-            <li>snake collide with food or self</li>
-            <li>need a grid? how else can snake collide?</li>
-            
-        </ol>
+    cube.addEventListener("mouseenter", () => {
+      timeline.play();
+    });
 
-        <i>
-            <ul>
-                <b>Rules as Limitations</b>
-                <li>html, js, json||greensock </li>
-                <li>more than 5 functions</li>
-                <li>less than 500 lines of code</li>
-                <li>minimal libraries or frameworks</li>
-            </ul>
-        </i>     
-        
-        <script src="" async defer></script>
-    </body>
+    cube.addEventListener("mouseleave", () => {
+      timeline.restart(); // Pause the timeline when the mouse leaves the cube
+    });
+  </script>
+</body>
 </html>
