@@ -1,66 +1,43 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="backgroundGrid.css">
-        <link rel="" href="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Simple Drag and Drop with interact.js</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="dragMe">Drag Me</div>
 
-        <link href='https://fonts.googleapis.com/css?family=Asap:400,700' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Signika+Negative:300,400,700' rel='stylesheet' type='text/css'>
-    </head>
-    <body>
-        
-
-        <div id="container">
-            <div class="box" id="box1">Drag and throw me</div>
-            <div class="box" id="box2" style="background-color:red;">Drag and throw me too</div>
-        </div>
-        <div class="controls">
-                <ul>
-                  <li class="controlsTitle">Options</li>
-                  <li>
-                    <label><input type="checkbox" name="snap" id="snap" value="1" /> Snap end position to grid</label>
-                  </li>
-                  <li>
-                    <label><input type="checkbox" name="liveSnap" id="liveSnap" value="1" /> Live snap</label>
-                  </li>
-                </ul>
-              </div>
-
-
-        <ol>
-            <li>nodes vs list</li>
-            <li>onclick</li>
-            <li>position relative vs absolute... overlap..z index?</li>
-            <li>follow cursor position</li>
-            <li>letting go compares cursor positon and positoins accordingly on list</li>
-            <li>all other list elements have to move out of the way</li>
-        </ol>
-
-        
-        <i>
-            <ul>
-                <b>Rules as Limitations</b>
-                <li>html, js, json||greensock </li>
-                <li>more than 5 functions</li>
-                <li>less than 500 lines of code</li>
-                <li>minimal libraries or frameworks</li>
-            </ul>
-        </i>      
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-
-    
+    <script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
     <script>
-        //https://random-word-api.herokuapp.com/word
-        //<script src="greenSock.js">
+        // Implement drag and drop functionality using interact.js
+        interact('.box').draggable({
+            onmove: function (event) {
+                const target = event.target;
+                const x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
+                const y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+
+                target.style.transform = `translate(${x}px, ${y}px)`;
+                target.setAttribute('data-x', x);
+                target.setAttribute('data-y', y);
+            },
+        });
     </script>
-
-    </body>
-
+</body>
 </html>
