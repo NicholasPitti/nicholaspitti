@@ -1,57 +1,252 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Drag and Drop with GSAP</title>
+  <title>Cube Animation Mouse Hover Game</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f0f0f0;
+      overflow: hidden;
     }
 
-    #container {
-      width: 300px;
-      height: 200px;
-      background-color: #fff;
-      border: 2px solid #333;
-      position: relative;
-    }
-
-    #box {
-      width: 100px;
-      height: 100px;
-      background-color: #ff5733;
+    #middle {
+      /*
+      transform-origin: 50% 50%;
       position: absolute;
-      cursor: pointer;
+      */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      /*transform: translate(-50%, -50%);*/
+      border: 2px solid #000
+    }
+
+    #cube {
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-style: preserve-3d;
+    }
+
+    .face {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background-color: rgba(0, 128, 0, 0.3); /* Green color with transparency */
+      border: 2px solid #fff;
+    }
+
+    .front {
+      transform: translateZ(75px);
+    }
+
+    .back {
+      transform: rotateY(180deg) translateZ(75px);
+    }
+
+    .left {
+      transform: rotateY(-90deg) translateZ(75px);
+    }
+
+    .right {
+      transform: rotateY(90deg) translateZ(75px);
+    }
+
+    .top {
+      transform: rotateX(90deg) translateZ(75px);
+    }
+
+    .bottom {
+      transform: rotateX(-90deg) translateZ(75px);
     }
   </style>
 </head>
 <body>
-  <div id="container">
-    <div id="box"></div>
+
+  <h1>Track the cube</h1>
+  <h2>Level <b id="lvl" style="color:Red">1</b></h2>
+  <p style="color:green">Track the cube with your mouse to solve the level</p>
+  <p>Leave cursor in the middle to see solution</p>
+  <p style="color: Red">Current issue is with event listeners starting the animation on next level</p>
+  <p>Therefore we only have 1 functional level</p>
+  <div id="middle">Middle</div>
+  <div onclick="restartLevel()" id="popup" style="display: none; position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 2px solid black;">
+    <h2>Try Again</h2>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+  <div onclick="nextLevel()" id="next" style="display: none; position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 2px solid black; color: Green;">
+    <h2>Next Level</h2>
+  </div>
+
+  <div id="cube">
+    <div class="face front"></div>
+    <div class="face back"></div>
+    <div class="face left"></div>
+    <div class="face right"></div>
+    <div class="face top"></div>
+    <div class="face bottom"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
   <script>
-    //you can pass the element itself or a jQuery object.
-    Draggable.create("#box", {
-        type:"x,y",
-        bounds: document.getElementById("container"),
-        inertia: true,
-        onClick: function() {
-            console.log("clicked");
-        },
-        onDragEnd: function() {
-            console.log("drag ended");
-        }
+    //extract color change and pass color values as variable
+    const cube = document.getElementById("cube");
+    const face = document.getElementsByClassName("face");
+    const timeline = gsap.timeline({ paused: true, onComplete: completeLevel, onCompleteParams: [cube]});
+    let isAnimationRunning = false; // Flag to track if the animation is running
+    let isPopupActive = false; // Flag to track if the popup is active
+    let isLevelComplete = false;
+    let levelNumber =0;
+    let easeValue="power2.in" //linear
+    let tOriginValues=["0","0","200px"]
+
+    document.getElementById("popup").style.cursor = "move";
+    document.getElementById("next").style.cursor = "move";
+  
+    //nextLevel(); //initialize
+
+    timeline.to("#cube", {
+      duration: 5.5, // determines how difficult to track
+      ease: easeValue,
+      rotationY: 360,
+      rotationX: 360,
+      translateZ: '100px',
+      transformOrigin: tOriginValues.join(" "),
     });
+
+/*
+    timeline.to("#cube", {
+      duration: 5, // determines how difficult to track
+      ease: easeValue,
+      rotationY: 360,
+      rotationX: 360,
+      translateZ: '100px',
+      transformOrigin: "0 0 200px",
+    });
+*/
+
+
+    function restartLevel(){
+      // Clear the "Try Again" popup
+      const popup = document.getElementById("popup");
+      popup.style.display = "none";
+      // Reset the animation of the cube
+      timeline.seek(0); //same as restart->pause
+      colorSet("green");
+      gsap.set("#cube", {
+      rotationY: 0,
+      rotationX: 0,
+      translateZ: '0',
+      transformOrigin: "0 0 0",
+    });
+    isAnimationRunning = false; 
+    isPopupActive = false; 
+    //isLevelComplete =false;??
+    }
+
+    function nextLevel(){
+      document.getElementById("lvl").innerText=levelNumber+1;
+      const nextPopup = document.getElementById("next");
+      nextPopup.style.display = "none";      
+      timeline.seek(0);
+      //timeline.restart();
+      //timeline.pause();
+      colorSet("green");
+      gsap.set("#cube", {
+      rotationY: 0,
+      rotationX: 0,
+      translateZ: '0',
+      transformOrigin: "0 0 0",
+    });
+      isAnimationRunning = false; //neccesary or seek will play itself
+      isPopupActive = false;
+      //isLevelComplete = false;
+      /*
+      switch(levelNumber){
+        case 2:
+
+        break;
+        case 3:
+
+        break;
+        case 4:
+
+        break;
+        default:
+          console.Log("No level")
+      }
+      */
+
+
+       // Start the animation only when the user hovers over the cube again
+  // This ensures the animation doesn't start immediately after clicking "Next Level"
+      //cube.addEventListener("mouseenter", startAnimation);
+
+      
+    }
+
+    //why does only this function req the element param?
+    function completeLevel() {
+      // Change the background color of the cube when the animation is complete
+      isLevelComplete = true;
+      colorSet("blue");
+      
+      const nextPopup = document.getElementById("next");
+      nextPopup.style.display = "block";
+    }
+    
+    function showTryAgainPopup() {
+      const popup = document.getElementById("popup");
+      popup.style.display = "block";
+      colorSet("red");
+      // Set the isPopupActive flag to true when the popup is displayed
+      //isPopupActive = true; doesnt work here
+    }
+
+    cube.addEventListener("mouseenter", () => {
+      if (!isPopupActive){ 
+        //console.log(isPopupActive) ###
+        if (!isAnimationRunning) {
+          timeline.play();
+          isAnimationRunning = true;
+          //showTryAgainPopup(); idk why this was put here
+        }
+      }
+    });
+  
+    cube.addEventListener("mouseleave", () => {
+      if (isAnimationRunning && !isLevelComplete) {
+        timeline.pause(); // Pause the timeline when the mouse leaves the cube
+        isAnimationRunning = false;
+        isPopupActive = true;
+        console.log(isPopupActive)
+        showTryAgainPopup(); //if you put this before isPopupActive then it wont be assigned or logged in console
+      }
+    });
+
+
+
+    function colorSet(colorPick){
+      let rgbaParamsArray=["0","128","0","0.3"];
+      switch(colorPick){
+        case "red":
+          rgbaParamsArray=["128","0","0","0.3"];
+          break;
+        case  "blue":
+          rgbaParamsArray=["0","0","128","0.3"];
+          break;
+        default:
+          rgbaParamsArray=["0","128","0","0.3"];
+      }
+      //rgbaParamsArray.join(",");
+      cube.querySelectorAll(".face").forEach(face => {
+        face.style.backgroundColor = `rgba(${rgbaParamsArray.join(", ")})`; // Red color with transparency
+      });
+    }
+    
+
   </script>
+  
 </body>
 </html>
