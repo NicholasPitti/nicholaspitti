@@ -7,7 +7,10 @@
 
     */
 
-
+ /* Custom CSS */
+ .text-info-hover:hover {
+    color: #f8f9fa; /* Desired light color */
+  }
 /* i think this code aint workin*/
 body{
     font-family:'Montserrat',sans-serif;	
