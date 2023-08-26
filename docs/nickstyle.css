@@ -7,10 +7,6 @@
 
     */
 
- /* Custom CSS */
- .text-info-hover:hover {
-    color: #f8f9fa; /* Desired light color */
-  }
 /* i think this code aint workin*/
 body{
     font-family:'Montserrat',sans-serif;	
@@ -19,6 +15,10 @@ li.important{
     list-style-type: none !important;
     text-transform: uppercase;
 }
+
+            .custom-opacity {
+                background-color: rgba(0, 0, 0, 0.5); /* Change opacity value as needed */
+            }
 
             .awesome{
                 color: orange;
@@ -53,4 +53,50 @@ li.important{
                 @media (min-width: 768px){		.card-columns{ column-count: 2;	}		}
                 @media (min-width: 992px){		.card-columns{ column-count: 3;	}		}
                 /*@media (min-width: 1200px){		.card-columns{ column-count: 4;	}		WHY DOESNT THIS WORK?}*/
-/**/ 
+
+
+
+                /*Vertical Navbar*/ 
+
+@media screen and (max-width: 800px) {
+    /* Targets the navigation menu container and menu items. 992 is medium standard */
+    .navbar .container-fluid .navbar-expand-lg .navbar-collapse,
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: column;   /* Arrange menu items in a vertical column */
+        align-self: flex-start;   /* Align menu items to the start (top) of the column */
+    }
+    
+    /* Targets the entire navbar */
+    .navbar {
+        width: 100%;               /* Sets the width of the navbar to 25% of the screen width   width: 20%;   */
+        height: 100vh;            /* Sets the height of the navbar to 100% of the viewport height */
+        align-items: flex-start;  /* Align the navbar contents to the start (top) */
+        
+    }
+        /* Targets the entire navbar */
+      .navbarCard {
+        width: 25%;               /* Sets the width of the navbar to 25% of the screen width */
+        height: 100vh;            /* Sets the height of the navbar to 100% of the viewport height */
+        align-items: flex-start;  /* Align the navbar contents to the start (top) */
+        
+    }
+    
+    /* Targets the navbar brand/logo */
+    .navbar-brand {
+        margin-left: 0.5rem;     /* Adds a small margin to the left of the brand/logo */
+        font-size: 1.5em;        /* Increases the font size of the brand/logo */
+        font-weight: bold;       /* Makes the brand/logo text bold */
+        
+    }
+/*
+    .navbar-brand {
+        display: inline-block; /* Display as inline-block 
+        vertical-align: middle; /* Align vertically within the navbar 
+        margin-right: 1rem; /* Add some spacing between brand and toggler 
+      }
+  */    
+      .navbar-toggler {
+        display: inline-block; /* Display as inline-block */
+        vertical-align: middle; /* Align vertically within the navbar */
+      }
+}

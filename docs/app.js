@@ -3,6 +3,7 @@ gsap.to(".ani",{
         trigger:".ani",
         toggleActions:"restart none none none"
     },
-    x:-100,
+    x:"auto",
+    marginLeft: "auto",
     duration:1
 });

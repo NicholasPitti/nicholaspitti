@@ -8,7 +8,14 @@
     
     /* Targets the entire navbar */
     .navbar {
-        width: 75%;               /* Sets the width of the navbar to 25% of the screen width */
+        width: 20%;               /* Sets the width of the navbar to 25% of the screen width   width: 20%;   */
+        height: 100vh;            /* Sets the height of the navbar to 100% of the viewport height */
+        align-items: flex-start;  /* Align the navbar contents to the start (top) */
+        
+    }
+        /* Targets the entire navbar */
+      .navbarCard {
+        width: 20%;               /* Sets the width of the navbar to 25% of the screen width */
         height: 100vh;            /* Sets the height of the navbar to 100% of the viewport height */
         align-items: flex-start;  /* Align the navbar contents to the start (top) */
         
