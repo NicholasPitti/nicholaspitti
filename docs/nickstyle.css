@@ -49,7 +49,7 @@ li.important{
             }
                 
                 /*Spacing:  https://www.w3schools.com/bootstrap4/bootstrap_utilities.asp*/
-                @media (min-width: 0px){		.card-columns{ column-count: 2;	}		}
+                @media (min-width: 576px){		.card-columns{ column-count: 2;	}		}
                 @media (min-width: 768px){		.card-columns{ column-count: 3;	}		}
                 @media (min-width: 992px){		.card-columns{ column-count: 4;	}		}
                 /*@media (min-width: 1200px){		.card-columns{ column-count: 4;	}		WHY DOESNT THIS WORK?}*/
@@ -59,7 +59,11 @@ li.important{
                 /*Tiny Navbar for Phone*/ 
                 @media screen and (max-width: 992px) {
                     .nav a {
-                        font-size: 8px;
+                        /*font-size: 8px;*/
+                        font-size: 1rem;
+                      }
+                      .nav-pills {
+                        padding: 10px; /* Adjust the reduced padding value */
                       }
                 }
                 
