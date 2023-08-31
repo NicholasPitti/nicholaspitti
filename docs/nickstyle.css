@@ -15,7 +15,10 @@ li.important{
     list-style-type: none !important;
     text-transform: uppercase;
 }
-
+.card a {
+    /* card overrides a so you need to nest a inside of .card */
+    text-decoration: none;
+}
             .custom-opacity {
                 background-color: rgba(0, 0, 0, 0.5); /* Change opacity value as needed */
             }
@@ -62,8 +65,7 @@ li.important{
                         /*font-size: 8px;*/
                         font-size: 1rem;
                       }
-                      .nav-pills {
-                        padding: 10px; /* Adjust the reduced padding value */
-                      }
+
+
                 }
                 
