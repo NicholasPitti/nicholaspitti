@@ -9,14 +9,9 @@
     }
 
     #middle {
-      /*
-      transform-origin: 50% 50%;
-      position: absolute;
-      */
       position: absolute;
       top: 50%;
       left: 50%;
-      /*transform: translate(-50%, -50%);*/
       border: 2px solid #000
     }
 
@@ -65,18 +60,26 @@
 <body>
 
   <h1>Track the cube</h1>
-  <h2>Level <b id="lvl" style="color:Red">1</b></h2>
-  <p style="color:green">Track the cube with your mouse to solve the level</p>
+
+  <p style="color:green">Track the cube with your mouse to solve</p>
   <p>Leave cursor in the middle to see solution</p>
-  <p style="color: Red">Current issue is with event listeners starting the animation on next level</p>
-  <p>Therefore we only have 1 functional level</p>
+  <p >Modify difficulty with form fields</p>
+  <p style="color: Red">Speed Duration less than 5 is very hard</p>
+
+  <form>
+    </select>
+    <label for="valDuration">Speed Duration</label>
+    <input value="5.5" type="text" id="valDuration">
+    <input type="button" value="Reset Cube" onclick="resetCube()">
+  </form>
+
   <div id="middle">Middle</div>
-  <div onclick="restartLevel()" id="popup" style="display: none; position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 2px solid black;">
+  <div onclick="resetCube()" id="popup" style="display: none; position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 2px solid black;">
     <h2>Try Again</h2>
   </div>
 
   <div onclick="nextLevel()" id="next" style="display: none; position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 2px solid black; color: Green;">
-    <h2>Next Level</h2>
+    <h2>Try Different Settings?</h2>
   </div>
 
   <div id="cube">
@@ -90,100 +93,49 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
   <script>
-    //extract color change and pass color values as variable
+    // Extracted variables
     const cube = document.getElementById("cube");
-    const face = document.getElementsByClassName("face");
-    const timeline = gsap.timeline({ paused: true, onComplete: completeLevel, onCompleteParams: [cube]});
-    let isAnimationRunning = false; // Flag to track if the animation is running
-    let isPopupActive = false; // Flag to track if the popup is active
+    const timeline = gsap.timeline({ paused: true, onComplete: completeLevel });
+    let isAnimationRunning = false;
+    let isPopupActive = false;
     let isLevelComplete = false;
-    let levelNumber =0;
-    let easeValue="power2.in" //linear
-    let tOriginValues=["0","0","200px"]
+    //let easeValue = "linear"; // Initialize easeValue
+    let durationValue = 5.5; // Initialize durationValue
+    // Get references to form elements
+    const valEase = document.getElementById("valEase");
+    const valDuration = document.getElementById("valDuration");
 
-    document.getElementById("popup").style.cursor = "move";
-    document.getElementById("next").style.cursor = "move";
-  
-    //nextLevel(); //initialize
-
+    // Initialize the animation
     timeline.to("#cube", {
-      duration: 5.5, // determines how difficult to track
-      ease: easeValue,
-      rotationY: 360,
-      rotationX: 360,
-      translateZ: '100px',
-      transformOrigin: tOriginValues.join(" "),
-    });
-
-/*
-    timeline.to("#cube", {
-      duration: 5, // determines how difficult to track
-      ease: easeValue,
+      duration: durationValue,
+      ease: "power2.in",
       rotationY: 360,
       rotationX: 360,
       translateZ: '100px',
       transformOrigin: "0 0 200px",
     });
-*/
 
-
-    function restartLevel(){
-      // Clear the "Try Again" popup
+    function resetCube() {
       const popup = document.getElementById("popup");
       popup.style.display = "none";
-      // Reset the animation of the cube
-      timeline.seek(0); //same as restart->pause
+      timeline.seek(0);
       colorSet("green");
       gsap.set("#cube", {
-      rotationY: 0,
-      rotationX: 0,
-      translateZ: '0',
-      transformOrigin: "0 0 0",
-    });
-    isAnimationRunning = false; 
-    isPopupActive = false; 
-    //isLevelComplete =false;??
+        rotationY: 0,
+        rotationX: 0,
+        translateZ: '0',
+        transformOrigin: "0 0 0",
+      });
+      isAnimationRunning = false;
+      isPopupActive = false;
+      // Update durationValue based on form inputs
+      durationValue = parseFloat(valDuration.value);
+      timeline.duration(durationValue);
+      
     }
 
-    function nextLevel(){
-      document.getElementById("lvl").innerText=levelNumber+1;
-      const nextPopup = document.getElementById("next");
-      nextPopup.style.display = "none";      
-      timeline.seek(0);
-      //timeline.restart();
-      //timeline.pause();
-      colorSet("green");
-      gsap.set("#cube", {
-      rotationY: 0,
-      rotationX: 0,
-      translateZ: '0',
-      transformOrigin: "0 0 0",
-    });
-      isAnimationRunning = false; //neccesary or seek will play itself
-      isPopupActive = false;
-      //isLevelComplete = false;
-      /*
-      switch(levelNumber){
-        case 2:
-
-        break;
-        case 3:
-
-        break;
-        case 4:
-
-        break;
-        default:
-          console.Log("No level")
-      }
-      */
-
-
-       // Start the animation only when the user hovers over the cube again
-  // This ensures the animation doesn't start immediately after clicking "Next Level"
-      //cube.addEventListener("mouseenter", startAnimation);
-
-      
+    function nextLevel() {
+      location.reload();
     }
 
     //why does only this function req the element param?
