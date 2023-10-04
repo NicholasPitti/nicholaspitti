@@ -3,7 +3,8 @@ gsap.to(".ani",{
         trigger:".ani",
         toggleActions:"restart none none none"
     },
-    x:"auto",
-    marginLeft: "auto",
+    x:"75%",
+    marginRight: "auto",
     duration:1
 });
+/*Left to right animation */
