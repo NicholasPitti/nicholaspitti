@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="greybackground.css">
     </head>
     <body>
+        <div style="margin:100px; text-align:center;">
         <header style="font-size:24px; text-align:center;">
             <b>Simple Text Analyzer</b>
         </header>
@@ -18,12 +19,75 @@
         <p>Type anything into text box</p>
         <textarea id="txt">example</textarea>
         <br>
-        <p>Output of analysis</p>
-        <textarea id="display">you can drag this down</textarea>
+        <br>
+        <br>
+        <u>Output of analysis</u>
+        <p id="display">...</p>
         <button onclick="start()"> Test </button>
         <br>
         <br>
         <br>
+        </div>
+
+    </body>
+    <script> 
+        let globalString
+        let wordsRemovingSpace
+        let wordsIndividual //let is block scoped.. var is funciont scoped
+        let wordsSentences
+/*Variable declared by let cannot be redeclared and must be declared before use whereas variables declared with var keyword are hoisted.*/
+
+        function start(){
+            let totalLetters=0//lets you test again without reloading page
+            let consonantCount=0
+            let vowelCount=0
+            let numCount=0
+            let miscSymbolCount=0
+            let outputContent=[]
+            let vowels=["a","e","i","o","u"];
+            let numbers=["0","1","2","3","4","5","6","7","8","9"];
+            let  consonants=["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+            //////////////////////////////////////////////////////////////////////////////
+            globalString=document.getElementById("txt").value
+            //////////////////////////////////////////////////////////////////////////////
+
+            globalString=globalString.trim() //removes spaces b4 and after
+            wordsRemovingSpace=globalString.split(" ")//turns string into array
+            if(globalString==""){
+                outputContent[0]="Amount of words: "+"0"
+            }else{
+            outputContent[0]="Amount of words: "+wordsRemovingSpace.length+" "
+            }
+            outputContent[1]="<br>"+ "Content:"+globalString+" "
+            wordsRemovingSpace.forEach(counterFunction)//checks for vowels,consonants&numbers forEach item of index n
+            outputContent[2]="<br>"+"Consonants: "+consonantCount+" "
+            outputContent[3]="<br>"+"Vowels: "+vowelCount+" "
+            outputContent[4]="<br>"+"Numbers: "+numCount+" "
+            outputContent[5]="<br>"+"Total letters: "+totalLetters+" "
+            outputContent[6]=("<br>"+"Other symbols: "+miscSymbolCount+" ")
+            ////////////////////////////////////////////////////////////////////////////////
+            document.getElementById("display").innerHTML=outputContent
+            ////////////////////////////////////////////////////////////////////////////////3
+            function counterFunction(item,index){//item enters this function through "forEach" therefore first entry now needs to be split
+                totalLetters=totalLetters+(item.length)
+                wordsIndividual=item.split("") //had to make sure this was splitting words into eacah letter
+                wordsIndividual.forEach(vowelAndconsonantCounter)//forEach inside of a forEach
+                function vowelAndconsonantCounter(innerItem){
+                    for(i of innerItem){
+                        if(numbers.includes(innerItem)){
+                            numCount++
+                        }else if(vowels.includes(innerItem)){
+                            vowelCount++
+                        }else if(consonants.includes(innerItem)){
+                            consonantCount++
+                        } else miscSymbolCount++         
+                    
+                }
+            }
+        }
+    }
+/*
+
         <footer>
             <i>   
                 <b>Functions</b>
@@ -58,75 +122,6 @@
                 </ul>
             </i>            
         </footer>
-    </body>
-    <script> 
-        var globalString
-        var wordsRemovingSpace
-        var wordsIndividual //let is block scoped.. var is funciont scoped
-        var wordsSentences
-/*Variable declared by let cannot be redeclared and must be declared before use whereas variables declared with var keyword are hoisted.*/
-
-        function start(){
-            var totalLetters=0//lets you test again without reloading page
-            var consonantCount=0
-            var vowelCount=0
-            var numCount=0
-            let outputContent=[]
-
-            //////////////////////////////////////////////////////////////////////////////
-            globalString=document.getElementById("txt").value
-            //////////////////////////////////////////////////////////////////////////////
-
-            outputContent[0]=("Type:"+typeof(globalString))
-            globalString=globalString.trim() //removes spaces b4 and after
-            wordsRemovingSpace=globalString.split(" ")//turns string into array
-            outputContent[1]="\n"+ "Content:"+globalString
-            wordsRemovingSpace.forEach(counterFunction)//checks for vowels,consonants&numbers forEach item of index n
-            outputContent[2]="\n"+"Consonants:"+consonantCount
-            outputContent[3]="\n"+"Vowels:"+vowelCount
-            outputContent[4]="\n"+"Numbers:"+numCount
-            outputContent[5]="\n"+"Total letters:"+totalLetters            
-            if(globalString==""){
-                outputContent[6]="\n"+"Amount of words"+"0"
-            }else{
-            outputContent[6]="\n"+"Amount of words"+wordsRemovingSpace.length
-            }
-            ////////////////////////////////////////////////////////////////////////////////
-            document.getElementById("display").innerHTML=outputContent
-            ////////////////////////////////////////////////////////////////////////////////3
-
-            function counterFunction(item,index){//item enters this function through "forEach" therefore first entry now needs to be split
-                totalLetters=totalLetters+(item.length)
-                wordsIndividual=item.split("") //had to make sure this was splitting words into eacah letter
-                wordsIndividual.forEach(vowelAndconsonantCounter)//forEach inside of a forEach
-                function vowelAndconsonantCounter(itemB,indexB){
-                    switch(itemB){
-                    case  "a":
-                    case  "e":
-                    case  "i":
-                    case  "o":
-                    case  "u":
-                        vowelCount++
-                        break
-                    case  "0":
-                    case  "1":
-                    case  "2":
-                    case  "3":
-                    case  "4":
-                    case  "5":
-                    case  "6":
-                    case  "7":
-                    case  "8":
-                    case  "9":
-                        numCount++
-                        break
-                    default:
-                        consonantCount++
-                    }
-                }
-            }
-
-        }
-
+*/
     </script>
 </html>

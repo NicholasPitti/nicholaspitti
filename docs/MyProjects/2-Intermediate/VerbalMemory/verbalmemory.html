@@ -20,10 +20,14 @@
             body{
                 background-color:#111828;
                 color:white;
+                text-align:center;
             }
         </style>
     </head>
     <body>
+        <br>
+        <br>
+        <br>
         <header style="font-size:24px; text-align:center;">
             <b>Verbal Memory Test</b>
         </header>
@@ -37,7 +41,114 @@
         <button id="showBtn" onclick="displayResults()">Show Seen Words</button>
         <br>
         <textarea id="textArea">drag down</textarea>
-        
+        <br>
+ push to an array and use the includes function... theres something wierd with the generated indexes here
+    </body>
+    <script>
+    let newArray=[];
+    let seenArray=[]; //let seenIndex=[]; not used //seenArray[0]="bruh"; //matching for some reason
+    let emptyArray=[];
+    let generatedIndex=0;
+    let lives=3;
+    let probability=0;
+    let randomSeenIndex=0;
+    let displayedWord=""; //sometimes this is counted ###
+    let i;
+    document.getElementById("showBtn").disabled=true;
+    document.getElementById("newBtn").disabled=true;
+    document.getElementById("seenBtn").disabled=true;
+  
+    getText("words.txt");
+    async function getText(file) {
+    let myObject = await fetch(file);
+    let myText = await myObject.text(); //buffer preloaded words
+    newArray=myText.split(","); //populate new array with entire text file
+    }
+
+    function startGame(){
+        document.getElementById("showBtn").disabled=true;
+        document.getElementById("newBtn").disabled=false;
+        document.getElementById("seenBtn").disabled=false;
+        document.getElementById("startBtn").disabled=true;
+        document.getElementById("textArea").innerHTML="";
+
+        seenArray=emptyArray; 
+
+        lives=3;//restarting lives
+        document.getElementById("lives").textContent=lives;//displaying lives after restart
+        showNewWord();
+
+        //i<100 because seenArray.length=4 instead of 8 for somereason #To Be Fixed
+        for (i=0;i<100;i++){
+                seenArray.pop();
+        }
+
+    }
+
+    function pickedNew(){
+        if(seenArray.includes(displayedWord)){
+            lives--;
+        }else{
+            seenArray.push(displayedWord);
+        }
+
+        document.getElementById("lives").textContent=lives;
+        showNewWord();
+        endGameCheck();
+    }
+
+    function pickedSeen(){
+        if(!seenArray.includes(displayedWord)){
+            lives--;
+            seenArray.push(displayedWord);
+        }
+
+        document.getElementById("lives").textContent=lives;
+        showNewWord();        
+        endGameCheck();
+    }
+/*
+    function verifyWordMatch(item,index){
+        console.log("item-"+item);     
+        if (item==displayedWord){
+            ///match="yes";
+        }              
+    }
+  */  
+    function displayResults(){
+        //seenArray.forEach(sliceQuotation);  /gets rid of output with quotations from text file
+        document.getElementById("textArea").innerHTML=seenArray;
+        document.getElementById("startBtn").disabled=false;
+    }        
+
+    function sliceQuotation(item,index){ //cleans up quatation marks from results textbox
+        seenArray[index]=seenArray[index].slice(1,-1);
+    }
+    
+    function showNewWord(){ ///generated index is for geting random word
+        probablility=Math.floor(Math.random()*4);//arbitrary probability can be fine tuned to show seen words more often
+        console.log("seenarray length--"+seenArray.length)
+            if(probablility<1 && seenArray.length>1){
+                randomSeenIndex=Math.floor(Math.random()*seenArray.length);
+                displayedWord=seenArray[randomSeenIndex];
+            //} else if(probablility>=1){
+            } else {
+            generatedIndex=Math.floor(Math.random()*99);
+            displayedWord=newArray[generatedIndex];
+            }
+        document.getElementById("wordout").textContent =displayedWord;
+        console.log("----------"+displayedWord);
+    }
+    
+    function endGameCheck(){
+        if(lives==0){
+            document.getElementById("showBtn").disabled=false;
+            document.getElementById("newBtn").disabled=true;
+            document.getElementById("seenBtn").disabled=true;
+        }  
+    }
+/*
+       
         <footer>
             <i>
                 <ol>
@@ -80,116 +191,7 @@
                 </ul>
             </i>            
         </footer>
-    </body>
-    <script>
-    var newArray=[];
-    var seenArray=[]; //var seenIndex=[]; not used //seenArray[0]="bruh"; //matching for some reason
-    var generatedIndex=0;
-    var lives=3;
-    var probability=0;
-    var randomSeenIndex=0;
-    var match="no";
-    var displayedWord=""; //sometimes this is counted ###
-    var i;
-    document.getElementById("showBtn").disabled=true;
-    document.getElementById("newBtn").disabled=true;
-    document.getElementById("seenBtn").disabled=true;
-  
-    getText("words.txt");
-    async function getText(file) {
-    let myObject = await fetch(file);
-    let myText = await myObject.text(); //buffer preloaded words
-    newArray=myText.split(","); //populate new array with entire text file
-    }
-
-    function startGame(){
-        document.getElementById("showBtn").disabled=true;
-        document.getElementById("newBtn").disabled=false;
-        document.getElementById("seenBtn").disabled=false;
-        document.getElementById("startBtn").disabled=true;
-        document.getElementById("textArea").innerHTML="";
-        /*
-        if(document.getElementById("hardMode").checked){ //clears seen array and fully resets game
-            for (i=0;i<seenArray.length;i++){
-                seenArray.pop()
-            }
-        }
-        */
-        /////////
-        for (i=0;i<seenArray.length;i++){
-                seenArray.pop()
-            }
-        /////////
-        lives=3;//restarting lives
-        document.getElementById("lives").textContent=lives;//displaying lives after restart
-        showNewWord();
-    }
-
-    function pickedNew(){
-        seenArray.forEach(verifyWordMatch);
-        console.log(match+"a4 checking");
-        if (match=="yes"){ 
-            lives=lives-1;
-        } else{
-            seenArray.push(displayedWord); //add displayed word to the seen words array
-        }
-        document.getElementById("lives").textContent=lives;
-        showNewWord();
-        endGameCheck();
-    }
-
-    function pickedSeen(){
-        seenArray.forEach(verifyWordMatch);
-        if (match=="no"){
-            lives--;
-            seenArray.push(displayedWord);
-        }
-        document.getElementById("lives").textContent=lives;
-        showNewWord();        
-        endGameCheck();
-    }
-
-    function verifyWordMatch(item,index){
-        console.log("item-"+item);     
-        if (item==displayedWord){
-            match="yes";
-        }              
-    }
-    
-    function displayResults(){
-        //seenArray.forEach(sliceQuotation);  /gets rid of output with quotations from text file
-        document.getElementById("textArea").innerHTML=seenArray;
-        document.getElementById("startBtn").disabled=false;
-    }        
-
-    function sliceQuotation(item,index){ //cleans up quatation marks from results textbox
-        seenArray[index]=seenArray[index].slice(1,-1);
-    }
-    
-    function showNewWord(){
-        match="no";
-        probablility=Math.floor(Math.random()*4);//arbitrary probability can be fine tuned to show seen words more often
-        console.log("seenarray length--"+seenArray.length)
-            if(probablility<1 && seenArray.length>1){
-                randomSeenIndex=Math.floor(Math.random()*seenArray.length);
-                displayedWord=seenArray[randomSeenIndex];
-            //} else if(probablility>=1){
-            } else {
-            generatedIndex=Math.floor(Math.random()*99);
-            displayedWord=newArray[generatedIndex];
-            }
-        document.getElementById("wordout").textContent =displayedWord;
-        console.log("----------"+displayedWord);
-    }
-    
-    function endGameCheck(){
-        if(lives==0){
-            document.getElementById("showBtn").disabled=false;
-            document.getElementById("newBtn").disabled=true;
-            document.getElementById("seenBtn").disabled=true;
-        }  
-    }
-
+*/
     </script>
 
 </html>
