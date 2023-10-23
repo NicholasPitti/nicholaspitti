@@ -1,6 +1,6 @@
-gsap.to(".ani",{
+gsap.to(".animate",{
     scrollTrigger:{
-        trigger:".ani",
+        trigger:".animate",
         toggleActions:"restart none none none"
     },
     x:"75%",

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Stopwatch</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="greybackground.css">
+    </head>
+    <body>
+        <header style="font-size:24px; text-align:center;">
+            <b>Stopwatch</b>
+        </header>
+
+        <main>
+            <div style="text-align: center;">
+                <p>seconds:</p> 
+                <p id="sec">0</p> 
+                <p>minutes:</p> 
+                <p id="min">0</p> 
+                <p id="timeout"></p>
+                <button onclick="start()">Start</button>
+                <button onclick="reset()">Reset</button>
+            </div>
+            <br>
+        </main>
+
+        
+        <script>
+            let seconds=0;
+            let minutes=0;
+            let intervalId=null;
+            let startToggleFlag=false;
+            function start(){
+                if(!startToggleFlag)
+                    intervalId = setInterval(watchTick, 1000);
+                startToggleFlag=true;    
+            }
+            
+            function watchTick(){
+                seconds++;
+                if (seconds==60){
+                    seconds=0;
+                    minutes++;
+                }
+                if(minutes==1){
+                    document.getElementById("timeout").innerHTML="A minute has passed";
+                }
+                updateView();
+            }
+            
+            function updateView(){  
+                document.getElementById("sec").innerHTML=parseInt(seconds);           
+                document.getElementById("min").innerHTML=parseInt(minutes);                
+            }     
+
+            function reset(){
+                if(startToggleFlag){
+                    clearInterval(intervalId);
+                    intervalId=null;
+                    console.log(document.getElementById("timeout").textContent);
+                    seconds=0;
+                    minutes=0;
+                    document.getElementById("timeout").innerHTML = "";
+                    updateView();
+                }
+                startToggleFlag=false;    
+            }
+        </script>
+
+    </body>
+</html>

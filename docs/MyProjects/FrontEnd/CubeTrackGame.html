@@ -57,29 +57,35 @@
     }
   </style>
 </head>
-<body>
+<body style="padding-left: 20px;">
 
-  <h1>Track the cube</h1>
-
-  <p style="color:green">Track the cube with your mouse to solve</p>
-  <p>Leave cursor in the middle to see solution</p>
-  <p >Modify difficulty with form fields</p>
-  <p style="color: Red">Speed Duration less than 5 is very hard</p>
-
+  <h1>Track the cube with your mouse</h1>
+  <p>Reset Cube to apply new Level</p>
   <form>
+    <label for="valLevel">Levels</label>
+    <select id="valLevel">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <!--  <input value="5.5" type="text" id="valDuration"> -->
     </select>
-    <label for="valDuration">Speed Duration</label>
-    <input value="5.5" type="text" id="valDuration">
     <input type="button" value="Reset Cube" onclick="resetCube()">
   </form>
 
-  <div id="middle">Middle</div>
+
+  <div id="middle">Hold mouse here for solution</div>
   <div onclick="resetCube()" id="popup" style="display: none; position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 2px solid black;">
     <h2>Try Again</h2>
   </div>
 
+  <br>
+  <br>
+  <br>
+  <br>
+
+
   <div onclick="nextLevel()" id="next" style="display: none; position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 2px solid black; color: Green;">
-    <h2>Try Different Settings?</h2>
+    <h2>Complete!Try Again?</h2>
   </div>
 
   <div id="cube">
@@ -100,18 +106,19 @@
     let isPopupActive = false;
     let isLevelComplete = false;
     //let easeValue = "linear"; // Initialize easeValue
-    let durationValue = 5.5; // Initialize durationValue
+    let level =1; // Initialize levelValue
+    let durationValue =5; // Initialize levelValue
     // Get references to form elements
-    const valEase = document.getElementById("valEase");
-    const valDuration = document.getElementById("valDuration");
+    const valLevel = document.getElementById("valLevel");
 
+    let Duration
     // Initialize the animation
     timeline.to("#cube", {
       duration: durationValue,
       ease: "power2.in",
-      rotationY: 360,
-      rotationX: 360,
-      translateZ: '100px',
+      rotationY: Math.floor(Math.random() * 361),
+      rotationX: 180,
+      translateZ: '150px',
       transformOrigin: "0 0 200px",
     });
 
@@ -128,10 +135,25 @@
       });
       isAnimationRunning = false;
       isPopupActive = false;
-      // Update durationValue based on form inputs
-      durationValue = parseFloat(valDuration.value);
+      // Update levelValue based on form inputs
+      level = Number(valLevel.value);
+      switch(level){
+        case 1:
+          durationValue=5;
+          break;
+        case 2:
+          durationValue=3;
+          break;
+        case 3:
+          durationValue=2;
+          break;
+          break;
+        default:
+          durationValue=5;
+          break;
+          break;
+      }
       timeline.duration(durationValue);
-      
     }
 
     function nextLevel() {
