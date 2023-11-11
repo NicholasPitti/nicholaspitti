@@ -22,19 +22,45 @@
 		</style>
 	</head>
 
-	<body data-spy="scroll" data-target="#scrollspy" data-offset="200" style="background-color:rgba(186,186,186,1);">
-		<div style="background-color: rgba(254,254,254,1);">
-			<div class="jumbotron-fluid font-weight-bold pl-5 py-5" style="background: linear-gradient(0deg, rgba(254,254,254,1) 0%, rgba(176,176,176,1) 82%);">
-				<div class="display-4">Nicholas Pitti</div>
+	<body data-spy="scroll" data-target="#scrollspy" data-offset="200" style="background-color:#111828">
+		<!--div style="background-color: rgba(254,254,254,1);"-->
+		
+			<div class="hero jumbotron-fluid font-weight-bold pl-5 py-5" style="height:92vh; background-color: #8cb9c9;">
+				<div class="display-1 py-5 text-dark"><h1 style="font-weight: bold;">Nicholas Pitti</h1></div>
+
+			
+					
+						<div class="contact 4 row" style="position:sticky;">
+							<div class="col-12 ">
+								<a  href="https://www.linkedin.com/in/nicholas-pitti-745772140/" title="Link to LinkedIn profile">
+									<ion-icon size="large" name="logo-linkedin" class="text-light"></ion-icon>
+									<p class="font-weight-bold text-light">Nicholas Pitti Gonzalez </p>
+								</a> 
+																
+								<a href="nick.a.pitti@gmail.com" title="Link to gmail">
+									<ion-icon size="large" name="mail-outline" style="color:white;" ></ion-icon>
+									<p class=" font-weight-bold text-light">nick.a.pitti@gmail.com</p>
+								</a>
+							
+								<a href="https://github.com/NicholasPitti" title="Link to my GitHub">
+									<ion-icon size="large" name="logo-octocat" style="color:white;"></ion-icon>
+									<p class="font-weight-bold text-light">GitHub!</p>
+								</a>
+
+							</div>
+						</div>
+
+				
+
 			</div>
 			
 
-				<div class="card p-1 mt-2 navbarCard sticky-top text-light" style="background-color: black;">
-					<nav id="scrollspy" class="navbar navbar-light bg-light text-light font-weight-bold">
+				<div class="card p-1 navbarCard sticky-top " style="background-color: black;">
+					<nav id="scrollspy" class="navbar navbar-light  font-weight-bold" style="background-color: rgb(0,0,0);">
 						<h1 class="navbar-brand font-weight-bold"></h1>
 						<ul class="nav nav-pills">
 							<li class="nav-item">
-								<a class="nav-link" href="#portfolio" alt="link to portfolio section">Portfolio</a>
+								<a class="nav-link" href="#projects" alt="link to projects section">Projects</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#cert" alt="link to certification section">Certification</a>
@@ -43,51 +69,25 @@
 								<a class="nav-link" href="#about" alt="link to about section">Resume</a>
 							</li>	
 							<li class="nav-item">
-								<a class="nav-link" href="#hire" alt="link to hire section"> Contact </a>
+								<a class="nav-link" href="#skills" alt="link to hire section"> Skills </a>
 							</li>
 						</ul>
 					</nav>
 				</div>
 
 
-				<div class="m-3 pb-2 display-none text-muted" >	
-					<h4 id="portfolio" class="d-flex text-light justify-content-end mr-5 py-3">Portfolio</h4>
+				<div class="mt-3 pb-2 display-none" >	
+					<h2 id="projects" class="d-flex  justify-content-end mr-5 py-3">Projects</h2>
 	
-					<div class="card-columns text-right mx-2 mt-4">
+					<div class="card-columns text-right mx-4">
+						
+
 						
 
 						<div class="card mono" style="background-color: rgba(11,11,11,1);">
-							<a target="_blank" href="MyProjects/FrontEnd/stopwatch.html" title="See how it works">
-								<span class="text-light">Stopwatch</span>
-								<img class="card-img-top py-3" src="Resources/StopwatchThumbnail.png" alt="Thumbnail of simple Stopwatch webpage">
-							</a>
-							
-								<a href="https://github.com/NicholasPitti/nicholaspitti/blob/master/docs/MyProjects/FrontEnd/stopwatch.html" title="Direct link to GitHub code">
-									<div class="card-body">
-									<span class="text-muted" >GitHub Code</span><ion-icon size="large" name="logo-octocat" style="color:white;"></ion-icon>
-								</div>
-								</a>
-							
-						</div>
-
-						<div class="card mono" style="background-color: rgba(11,11,11,1);">
-							<a target="_blank" href="MyProjects/FrontEnd/simpletextanalyze.html" title="See how it works">
-								<span class="text-light">Text Analyzer</span>
-								<img class="card-img-top py-3" src="Resources/TextAnalyzerThumbnail.png" alt="Thumbnail of simple text analyze webpage">
-							</a>
-							<div class="card-body">
-								
-								<a href="https://github.com/NicholasPitti/nicholaspitti/blob/master/docs/MyProjects/FrontEnd/simpletextanalyze.html" title="Direct link to GitHub code">
-									<span class="text-muted" >GitHub Code</span><ion-icon size="large" name="logo-octocat" style="color:white;"></ion-icon>
-								</a>
-								
-							</div>
-						</div>
-
-						<div class="card mono" style="background-color: rgba(11,11,11,1);">
 							<a target="_blank" href="MyProjects/FrontEnd/VerbalMemory/verbalmemory.html" title="See how it works">
-								<span class="text-light">Verbal Memory Test</span>
-								<img class="card-img-top py-3" src="Resources/VerbalMemThumbnail.png" alt="Thumbnail of simple text analyze webpage">
+								<span class="">Verbal Memory Test</span>
+								<p class="m-5 p-5">You are shown words, one at a time. If you've seen a word during the test click SEEN. If it's a new word, click NEW.</p>
 							</a> 
 							<div class="card-body">
 								<a href="https://github.com/NicholasPitti/nicholaspitti/blob/master/docs/MyProjects/FrontEnd/VerbalMemory/verbalmemory.html" title="Direct link to GitHub code">
@@ -96,27 +96,31 @@
 							</div>
 						</div>
 					
-							<div class="card mono" style="background-color: rgba(11,11,11,1);">
-								<a target="_blank" href="MyProjects/FrontEnd/CubeTrackGame.html" title="See how it works">
-									<span class="text-light">Cube Tracker Game</span>
-									<img class="card-img-top py-3" src="Resources/cubetrackgamethumbnail.png" alt="Thumbnail of cube track game">
-								</a>
-								<div class="card-body">
-									<a href="https://github.com/NicholasPitti/nicholaspitti/blob/master/docs/MyProjects/FrontEnd/CubeTrackGame.html" title="Direct link to GitHub code">
-										<span class="text-muted" >GitHub Code</span><ion-icon size="large" name="logo-octocat" style="color:white;"></ion-icon>
-									</a>
-								</div>
-							</div>
+	
 
 							<div class="card mono" style="background-color: rgba(11,11,11,1);">
 								<a target="_blank" href="https://youtu.be/Vy5Gib7S8Kw" title="See how it works">
-									<span class="text-light">Transcribe MP4 And Generate Summary </span>
+									<span class="">Transcribe MP4 And Generate Summary </span>
 									<img class="card-img-top py-3" src="Resources/YTTranscribeThumbnail.png" alt="Thumbnail of Vertical Navbar page">
 								</a>
 								<div class="card-body">
 									<a href="https://youtu.be/Vy5Gib7S8Kw" title="Link To Demonstration">
 										<span class="text-muted" >Youtube</span><ion-icon size="large" name="logo-youtube" style="color:white;"></ion-icon>
 									</a>
+								</div>
+							</div>
+
+							<div class="card mono" style="background-color: rgba(11,11,11,1);">
+								<a target="_blank" href="MyProjects/FrontEnd/simpletextanalyze.html" title="See how it works">
+									<span class="">Text Analyzer</span>
+									<img class="card-img-top py-3" src="Resources/TextAnalyzerThumbnail.png" alt="Thumbnail of simple text analyze webpage">
+								</a>
+								<div class="card-body">
+									
+									<a href="https://github.com/NicholasPitti/nicholaspitti/blob/master/docs/MyProjects/FrontEnd/simpletextanalyze.html" title="Direct link to GitHub code">
+										<span class="text-muted" >GitHub Code</span><ion-icon size="large" name="logo-octocat" style="color:white;"></ion-icon>
+									</a>
+									
 								</div>
 							</div>
 
@@ -128,7 +132,7 @@
 			<br>
 
 			<div class="mt-3">
-				<h4 id="cert" class="text-dark d-flex justify-content-center" >Certification</h4>	
+				<h2 id="cert" class=" d-flex justify-content-end mr-5" >Certification</h2>	
 				<br>
 				<div class="container mt-4" >
 					<div class="row align-items-center">
@@ -140,7 +144,7 @@
 						</div>
 						<div class="mt-2 col-12 col-lg-6">
 							<img class="img-fluid " src="Resources/CiscoCert.png" alt="Coursera Building Web Applications in PHP">
-						</div>
+							</div>
 						<div class="mt-2 col-12 col-lg-6">
 							<img class="img-fluid " src="Resources/UiPathCert.png" alt="Coursera Building Web Applications in PHP">
 						</div>
@@ -152,9 +156,9 @@
 			</div>
 
 			<div>	
-				<h4 id="about" class="text-muted d-flex justify-content-end mr-5 mt-2 invisible">Resume scroll_anchor</h4>
+				<h2 id="about" class="text-muted d-flex justify-content-end mr-5 mt-2 invisible">Resume scroll_anchor</h2>
 				
-				<div class="card  card-body" style="background-color:#111828" style="background: url('Resources/prism.png');">		
+				<div class="card  card-body" style="background-color:#000;">		
 					<hr class="bg-light w-50 mx-auto">	
 					<div class="container">
 						<div class="row">				
@@ -175,32 +179,60 @@
 			<br>
 			<br>
 
-			<footer id="hire" class="text-dark mx-auto" style="background: url('images/prism.png'); ">
-				<div class="py-3">
-					<div class=" animate mb-2 p-4 card offset-1 text-light container w-50 bg-primary"> 
-						<div class="row justify-content-end">
-							<div class="col-12">
-								<a  href="https://www.linkedin.com/in/nicholas-pitti-745772140/" title="Link to LinkedIn profile">
-									<ion-icon size="large" name="logo-linkedin" class="text-light"></ion-icon>
-									<p class="font-weight-bold text-light">Nicholas Pitti Gonzalez </p>
-								</a> 
-																
-								<a href="nick.a.pitti@gmail.com">
-									<ion-icon size="large" name="mail-outline" style="color:white;" ></ion-icon>
-									<p class="text-light font-weight-bold">nick.a.pitti@gmail.com</p>
-								</a>
-							
-								<a href="https://github.com/NicholasPitti" title="Link to my GitHub">
-									<ion-icon size="large" name="logo-octocat" style="color:white;"></ion-icon>
-									<p class="font-weight-bold text-light">GitHub!</p>
-								</a>
 
-							</div>
-						</div>
+
+			  
+			<div class="d-block text-center text-muted">
+				<h4>Resume Preview</h4>
+				<embed src="Resources/Nicholas Pitti  CV.pdf#toolbar=0" type="application/pdf" style="width:75vw; height: 75vh"/>
+			</div>
+
+
+
+			<div class="iconBanner">
+				
+			</div>
+
+			<h2 id="projects" class="d-flex  justify-content-end mr-5 py-3">Skills</h2>
+
+
+
+			<footer id="skills" class="" >
+
+	
+				<div class="m-5 p-5 border border-dark rounded ">
+					<div class="row d-block">
+						<h3>Design</h3>
+						<div class="my-2 mx-auto btn btn-outline-light">Figma</div>
+						<div class="my-2 mx-auto btn btn-outline-light">Krita</div>
+					</div>
+					<div class="row d-block">
+						<h3>Web Development</h3>
+						<div class="my-2 mx-auto btn btn-outline-light">HTML</div>
+						<div class="my-2 mx-auto btn btn-outline-light">CSS</div>
+						<div class="my-2 mx-auto btn btn-outline-light">JavaScript</div>
+						<div class="my-2 mx-auto btn btn-outline-light">TypeScript</div>
+						<div class="my-2 mx-auto btn btn-outline-light">Bootstrap</div>
+						<div class="my-2 mx-auto btn btn-outline-light">ReactJS</div>
+						<div class="my-2 mx-auto btn btn-outline-light">react-bootstrap</div>
+						<div class="my-2 mx-auto btn btn-outline-light">ReactNative</div>
+						<div class="my-2 mx-auto btn btn-outline-light">GSAP animation library</div>
+	
+					</div>
+					<div class="row d-block">
+						<h3>Developer Tools</h3>
+						<div class="my-2 mx-auto btn btn-outline-light">Git</div>
 
 					</div>
+					<div class="row d-block">
+						<h3>Automation</h3>
+						<div class="my-2 mx-auto btn btn-outline-light">UiPath</div>
+						<div class="my-2 mx-auto btn btn-outline-light">C#</div>
+						<div class="my-2 mx-auto btn btn-outline-light">VB</div>
+						<div class="my-2 mx-auto btn btn-outline-light">Linux</div>
+						<div class="my-2 mx-auto btn btn-outline-light">Python</div>
+					</div>
 				</div>
-
 
 			</footer>
 
@@ -215,13 +247,13 @@
 			crossorigin="anonymous"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
-			<script src="app.js"></script>
+			<script src="AnimationsGSAP.js"></script>
 
 			<script>
 /*
 							<div class="card mono" style="background-color: rgba(11,11,11,1);">
 								<a target="_blank" href="MyProjects/FrontEnd/DragDrop/dragdrop.html" title="See how it works">
-									<span class="text-light">Drag And Drop</span>
+									<span class="">Drag And Drop</span>
 									<img class="card-img-top py-3" src="Resources/dragdropthumbnail.png" alt="Thumbnail of Vertical Navbar page">
 								</a>
 								<div class="card-body">
@@ -230,8 +262,37 @@
 									</a>
 								</div>
 							</div>
+
+									<div class="card mono" style="background-color: rgba(11,11,11,1);">
+								<a target="_blank" href="MyProjects/FrontEnd/stopwatch.html" title="See how it works">
+									<span class="">Stopwatch</span>
+									<img class="card-img-top py-3" src="Resources/StopwatchThumbnail.png" alt="Thumbnail of simple Stopwatch webpage">
+								</a>
+								
+									<a href="https://github.com/NicholasPitti/nicholaspitti/blob/master/docs/MyProjects/FrontEnd/stopwatch.html" title="Direct link to GitHub code">
+										<div class="card-body">
+										<span class="text-muted" >GitHub Code</span><ion-icon size="large" name="logo-octocat" style="color:white;"></ion-icon>
+									</div>
+									</a>
+								
+							</div>
+	
+				
+
+													<div class="card mono" style="background-color: rgba(11,11,11,1);">
+								<a target="_blank" href="MyProjects/FrontEnd/CubeTrackGame.html" title="See how it works">
+									<span class="">Cube Tracker Game</span>
+									<img class="card-img-top py-3" src="Resources/cubetrackgamethumbnail.png" alt="Thumbnail of cube track game">
+								</a>
+								<div class="card-body">
+									<a href="https://github.com/NicholasPitti/nicholaspitti/blob/master/docs/MyProjects/FrontEnd/CubeTrackGame.html" title="Direct link to GitHub code">
+										<span class="text-muted" >GitHub Code</span><ion-icon size="large" name="logo-octocat" style="color:white;"></ion-icon>
+									</a>
+								</div>
+							</div>
+
 */
 			</script>
-		</div>
+	
 	</body>
 </html>
