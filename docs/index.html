@@ -1,257 +1,419 @@
-<!DOCTYPE html> <!--nice <hr class="mx-5">"-->
-<html lang="en"><!--thicc line <div class="container bg-light mb-2"><div class="row card"></div></div>--->
-	<head>
-	        <title>Portfolio</title>
-		<link rel="shortcut icon" type="image/x-icon" href="#blank" />
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<!--nice <hr class="mx-5">"-->
+<html lang="en">
+  <!--thicc line <div class="container bg-light mb-2"><div class="row card"></div></div>--->
+  <head>
+    <title>Portfolio</title>
+    <link rel="shortcut icon" type="image/x-icon" href="#blank" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-		
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-			
-		<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-			
-		<link rel="stylesheet" href="nickstyle.css" >
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
 
-			<style>
-		</style>
-	</head>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
 
-	<body data-spy="scroll" data-target="#scrollspy" data-offset="200" style="background-color:#111828">
-		<!--div style="background-color: rgba(254,254,254,1);"-->
-		
-			<div class="hero jumbotron-fluid font-weight-bold pl-5 py-5" style="height:92vh; background-color: #8cb9c9;">
-				<div class="py-5 text-dark"><h1 style="font-weight: bold;">Nicholas Pitti</h1></div>
-				<div class="text-muted"><h2 style="font-weight: bold;">Web Developer</h2></div>
-			
-					
-						<div class="contact 4 row" style="position:sticky;">
-							<div class="col-12 ">
-								<a  href="https://www.linkedin.com/in/nicholas-pitti-745772140/" title="Link to LinkedIn profile">
-									<ion-icon size="large" name="logo-linkedin" class="text-light d-block"></ion-icon>
-									<p class="font-weight-bold text-light d-none d-md-block">Nicholas Pitti Gonzalez </p>
-								</a> 
-																
-								<a href="nick.a.pitti@gmail.com" title="Link to gmail">
-									<ion-icon size="large" name="mail-outline" style="color:white;" class="d-block" ></ion-icon>
-									<p class=" font-weight-bold text-light d-none d-md-block">nick.a.pitti@gmail.com</p>
-								</a>
-							
-								<a href="https://github.com/NicholasPitti" title="Link to my GitHub">
-									<ion-icon size="large" name="logo-octocat" style="color:white;" class="d-block"></ion-icon>
-									<p class="font-weight-bold text-light d-none d-md-block">GitHub!</p>
-								</a>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
 
-							</div>
-						</div>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
 
-				
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
 
-			</div>
-			
+    <link rel="stylesheet" href="nickstyle.css" />
 
-				<div class="card p-1 navbarCard sticky-top " style="background-color: black;">
-					<nav id="scrollspy" class="navbar navbar-light  font-weight-bold" style="background-color: rgb(0,0,0);">
-						<h1 class="navbar-brand font-weight-bold"></h1>
-						<ul class="nav nav-pills">
-							<li class="nav-item">
-								<a class="nav-link" href="#projects" alt="link to projects section">Projects</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#cert" alt="link to certification section">Certification</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#about" alt="link to about section">Resume</a>
-							</li>	
-							<li class="nav-item">
-								<a class="nav-link" href="#skills" alt="link to hire section"> Skills </a>
-							</li>
-						</ul>
-					</nav>
-				</div>
+    <style></style>
+  </head>
 
+  <body
+    data-spy="scroll"
+    data-target="#scrollspy"
+    data-offset="200"
+    style="background-color: #111828"
+  >
+    <!--div style="background-color: rgba(254,254,254,1);"-->
 
-				<div class="mt-3 pb-2 display-none" >	
-					<h2 id="projects" class="d-flex  justify-content-end mr-5 py-3">Projects</h2>
-	
-					<div class="card-columns text-right mx-4">
-						
+    <div
+      class="hero jumbotron-view-height jumbotron-fluid font-weight-bold pl-5 py-5"
+      style="background-color: #8cb9c9"
+    >
+      <div class="py-5 text-dark">
+        <h1 style="font-weight: bold">Nicholas Pitti</h1>
+      </div>
+      <div class="text-muted">
+        <h2 style="font-weight: bold">Web Developer</h2>
+      </div>
 
-						
+      <div class="contact 4 row" style="position: sticky">
+        <div class="col-12">
+          <a
+            href="https://www.linkedin.com/in/nicholas-pitti-745772140/"
+            title="Link to LinkedIn profile"
+          >
+            <ion-icon
+              size="large"
+              name="logo-linkedin"
+              class="text-light d-block"
+            ></ion-icon>
+            <p class="font-weight-bold text-light d-none d-md-block">
+              Nicholas Pitti Gonzalez
+            </p>
+          </a>
 
-						<div class="card mono" style="background-color: rgba(11,11,11,1);">
-							<a target="_blank" href="MyProjects/FrontEnd/VerbalMemory/verbalmemory.html" title="See how it works">
-								<span class="">Verbal Memory Test</span>
-								<p class="m-5 p-5">You are shown words, one at a time. If you've seen a word during the test click SEEN. If it's a new word, click NEW.</p>
-							</a> 
-							<div class="card-body">
-								<a href="https://github.com/NicholasPitti/nicholaspitti/blob/master/docs/MyProjects/FrontEnd/VerbalMemory/verbalmemory.html" title="Direct link to GitHub code">
-									<span class="text-muted" >GitHub Code</span><ion-icon size="large" name="logo-octocat" style="color:white;"></ion-icon>
-								</a>
-							</div>
-						</div>
-					
-	
+          <a href="nick.a.pitti@gmail.com" title="Link to gmail">
+            <ion-icon
+              size="large"
+              name="mail-outline"
+              style="color: white"
+              class="d-block"
+            ></ion-icon>
+            <p class="font-weight-bold text-light d-none d-md-block">
+              nick.a.pitti@gmail.com
+            </p>
+          </a>
 
-							<div class="card mono" style="background-color: rgba(11,11,11,1);">
-								<a target="_blank" href="https://youtu.be/Vy5Gib7S8Kw" title="See how it works">
-									<span class="">Transcribe MP4 And Generate Summary </span>
-									<img class="card-img-top py-3" src="Resources/YTTranscribeThumbnail.png" alt="Thumbnail of Vertical Navbar page">
-								</a>
-								<div class="card-body">
-									<a href="https://youtu.be/Vy5Gib7S8Kw" title="Link To Demonstration">
-										<span class="text-muted" >Youtube</span><ion-icon size="large" name="logo-youtube" style="color:white;"></ion-icon>
-									</a>
-								</div>
-							</div>
+          <a href="https://github.com/NicholasPitti" title="Link to my GitHub">
+            <ion-icon
+              size="large"
+              name="logo-octocat"
+              style="color: white"
+              class="d-block"
+            ></ion-icon>
+            <p class="font-weight-bold text-light d-none d-md-block">GitHub!</p>
+          </a>
+        </div>
+      </div>
+    </div>
 
-							<div class="card mono" style="background-color: rgba(11,11,11,1);">
-								<a target="_blank" href="MyProjects/FrontEnd/simpletextanalyze.html" title="See how it works">
-									<span class="">Text Analyzer</span>
-									<img class="card-img-top py-3" src="Resources/TextAnalyzerThumbnail.png" alt="Thumbnail of simple text analyze webpage">
-								</a>
-								<div class="card-body">
-									
-									<a href="https://github.com/NicholasPitti/nicholaspitti/blob/master/docs/MyProjects/FrontEnd/simpletextanalyze.html" title="Direct link to GitHub code">
-										<span class="text-muted" >GitHub Code</span><ion-icon size="large" name="logo-octocat" style="color:white;"></ion-icon>
-									</a>
-									
-								</div>
-							</div>
+    <div class="card p-1 navbarCard sticky-top" style="background-color: black">
+      <nav
+        id="scrollspy"
+        class="navbar navbar-light font-weight-bold"
+        style="background-color: rgb(0, 0, 0)"
+      >
+        <h1 class="navbar-brand font-weight-bold"></h1>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="#projects" alt="link to projects section"
+              >Projects</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#cert" alt="link to certification section"
+              >Certification</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about" alt="link to about section"
+              >Resume</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills" alt="link to hire section">
+              Skills
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
-					</div>
-				</div>
+    <div class="mt-3 pb-2 display-none">
+      <h2 id="projects" class="d-flex justify-content-end mr-5 py-3">
+        Projects
+      </h2>
 
+      <div class="card-columns text-right mx-4">
+        <div class="card mono" style="background-color: rgba(11, 11, 11, 1)">
+          <a
+            target="_blank"
+            href="MyProjects/FrontEnd/VerbalMemory/verbalmemory.html"
+            title="See how it works"
+          >
+            <span class="">Verbal Memory Test</span>
+            <p class="m-5 p-5">
+              You are shown words, one at a time. If you've seen a word during
+              the test click SEEN. If it's a new word, click NEW.
+            </p>
+          </a>
+          <div class="card-body">
+            <a
+              href="https://github.com/NicholasPitti/nicholaspitti/blob/master/docs/MyProjects/FrontEnd/VerbalMemory/verbalmemory.html"
+              title="Direct link to GitHub code"
+            >
+              <span class="text-muted">GitHub Code</span
+              ><ion-icon
+                size="large"
+                name="logo-octocat"
+                style="color: white"
+              ></ion-icon>
+            </a>
+          </div>
+        </div>
 
-			<br>
-			<br>
+        <div class="card mono" style="background-color: rgba(11, 11, 11, 1)">
+          <a
+            target="_blank"
+            href="https://youtu.be/Vy5Gib7S8Kw"
+            title="See how it works"
+          >
+            <span class="">Transcribe MP4 And Generate Summary </span>
+            <img
+              class="card-img-top py-3"
+              src="Resources/YTTranscribeThumbnail.png"
+              alt="Thumbnail of Vertical Navbar page"
+            />
+          </a>
+          <div class="card-body">
+            <a
+              href="https://youtu.be/Vy5Gib7S8Kw"
+              title="Link To Demonstration"
+            >
+              <span class="text-muted">Youtube</span
+              ><ion-icon
+                size="large"
+                name="logo-youtube"
+                style="color: white"
+              ></ion-icon>
+            </a>
+          </div>
+        </div>
 
-			<div class="mt-3">
-				<h2 id="cert" class=" d-flex justify-content-end mr-5" >Certification</h2>	
-				<br>
-				<div class="container mt-4" >
-					<div class="row align-items-center">
-						<div class="mt-2 col-12 col-lg-6">
-							<img class="img-fluid " src="Resources/FrontEndCertification.PNG" alt="Free Code Camp Front End Certification">
-						</div>
-						<div class="mt-2 col-12 col-lg-6">
-							<img class="img-fluid " src="Resources/CourseraPhp.png" alt="Coursera Building Web Applications in PHP">
-						</div>
-						<div class="mt-2 col-12 col-lg-6">
-							<img class="img-fluid " src="Resources/CiscoCert.png" alt="Coursera Building Web Applications in PHP">
-							</div>
-						<div class="mt-2 col-12 col-lg-6">
-							<img class="img-fluid " src="Resources/UiPathCert.png" alt="Coursera Building Web Applications in PHP">
-						</div>
-						<div class="mt-2 col-12 col-lg-6">
-							<img class="img-fluid " src="Resources/MagneticLockPrj.jpg" alt="Certification for Universitry Course Project" target="_blank" href="Resources/Cerradura magnética con reconocimiento facial de bajo costo - Samuel Serrano Nicholas Pitti Ginnelle Gracia.pdf">
-						</div>
-					</div>
-				</div>	
-			</div>
+        <div class="card mono" style="background-color: rgba(11, 11, 11, 1)">
+          <a
+            target="_blank"
+            href="https://www.youtube.com/watch?v=AqiE2Cghfj8"
+            title="See how it works"
+          >
+            <span class="">React Webpage Clone </span>
+            <img
+              class="card-img-top py-3"
+              src="Resources/webpage-clone-thumbnail.png"
+              alt="Thumbnail of Vertical Navbar page"
+            />
+          </a>
+          <div class="card-body">
+            <a
+              href="https://www.youtube.com/watch?v=AqiE2Cghfj8"
+              title="Link To Demonstration"
+            >
+              <span class="text-muted">Youtube</span
+              ><ion-icon
+                size="large"
+                name="logo-youtube"
+                style="color: white"
+              ></ion-icon>
+            </a>
+          </div>
+        </div>
 
-			<div>	
-				<h2 id="about" class="text-muted d-flex justify-content-end mr-5 mt-2 invisible">Resume scroll_anchor</h2>
-				
-				<div class="card  card-body" style="background-color:#000;">		
-					<hr class="bg-light w-50 mx-auto">	
-					<div class="container">
-						<div class="row">				
-							<a class="mx-auto my-2 col-10 btn btn-primary" href="Resources/Nicholas Pitti.pdf" download="ResumeNicholasPitti">
-								Download Resume
-							  </a>
-							  
+        <div class="card mono" style="background-color: rgba(11, 11, 11, 1)">
+          <a
+            target="_blank"
+            href="MyProjects/FrontEnd/simpletextanalyze.html"
+            title="See how it works"
+          >
+            <span class="">Text Analyzer</span>
+            <img
+              class="card-img-top py-3"
+              src="Resources/TextAnalyzerThumbnail.png"
+              alt="Thumbnail of simple text analyze webpage"
+            />
+          </a>
+          <div class="card-body">
+            <a
+              href="https://github.com/NicholasPitti/nicholaspitti/blob/master/docs/MyProjects/FrontEnd/simpletextanalyze.html"
+              title="Direct link to GitHub code"
+            >
+              <span class="text-muted">GitHub Code</span
+              ><ion-icon
+                size="large"
+                name="logo-octocat"
+                style="color: white"
+              ></ion-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-							<a class="mx-auto my-4 col-10 btn btn-outline-primary" target="_blank" href="Resources/Nicholas Pitti CV.pdf" title="">
-								Open In Separate Page
-							</a>
-						</div>
-					</div>
-					<hr class="bg-light w-50 mx-auto ">			
-				</div>
+    <br />
+    <br />
 
-			</div>
-			<br>
-			<br>
+    <div class="mt-3">
+      <h2 id="cert" class="d-flex justify-content-end mr-5">Certification</h2>
+      <br />
+      <div class="container mt-4">
+        <div class="row align-items-center">
+          <div class="mt-2 col-12 col-lg-6">
+            <img
+              class="img-fluid"
+              src="Resources/FrontEndCertification.PNG"
+              alt="Free Code Camp Front End Certification"
+            />
+          </div>
+          <div class="mt-2 col-12 col-lg-6">
+            <img
+              class="img-fluid"
+              src="Resources/CourseraPhp.png"
+              alt="Coursera Building Web Applications in PHP"
+            />
+          </div>
+          <div class="mt-2 col-12 col-lg-6">
+            <img
+              class="img-fluid"
+              src="Resources/CiscoCert.png"
+              alt="Coursera Building Web Applications in PHP"
+            />
+          </div>
+          <div class="mt-2 col-12 col-lg-6">
+            <img
+              class="img-fluid"
+              src="Resources/UiPathCert.png"
+              alt="Coursera Building Web Applications in PHP"
+            />
+          </div>
+          <div class="mt-2 col-12 col-lg-6">
+            <img
+              class="img-fluid"
+              src="Resources/MagneticLockPrj.jpg"
+              alt="Certification for Universitry Course Project"
+              target="_blank"
+              href="Resources/Cerradura magnética con reconocimiento facial de bajo costo - Samuel Serrano Nicholas Pitti Ginnelle Gracia.pdf"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <div>
+      <h2
+        id="about"
+        class="text-muted d-flex justify-content-end mr-5 mt-2 invisible"
+      >
+        Resume scroll_anchor
+      </h2>
 
+      <div class="card card-body" style="background-color: #000">
+        <hr class="bg-light w-50 mx-auto" />
+        <div class="container">
+          <div class="row">
+            <a
+              class="mx-auto my-2 col-10 btn btn-primary"
+              href="Resources/Nicholas Pitti.pdf"
+              download="ResumeNicholasPitti"
+            >
+              Download Resume
+            </a>
 
-			  
-			<div class="text-center text-muted d-none d-lg-block">
-				<h4>Resume Preview</h4>
-				<embed src="Resources/Nicholas Pitti  CV.pdf#toolbar=0" type="application/pdf" style="width:75vw; height: 75vh"/>
-			</div>
+            <a
+              class="mx-auto my-4 col-10 btn btn-outline-primary"
+              target="_blank"
+              href="Resources/Nicholas Pitti CV.pdf"
+              title=""
+            >
+              Open In Separate Page
+            </a>
+          </div>
+        </div>
+        <hr class="bg-light w-50 mx-auto" />
+      </div>
+    </div>
+    <br />
+    <br />
 
+    <div class="text-center text-muted d-none d-lg-block">
+      <h4>Resume Preview</h4>
+      <embed
+        src="Resources/Nicholas Pitti  CV.pdf#toolbar=0"
+        type="application/pdf"
+        style="width: 75vw; height: 75vh"
+      />
+    </div>
 
+    <div class="iconBanner"></div>
 
-			<div class="iconBanner">
-				
-			</div>
+    <h2 id="projects" class="d-flex justify-content-end mr-5 py-3">Skills</h2>
 
-			<h2 id="projects" class="d-flex  justify-content-end mr-5 py-3">Skills</h2>
+    <footer id="skills" class="">
+      <div class="m-5 p-5 border border-dark rounded">
+        <div class="row d-block">
+          <h3>Design</h3>
+          <div class="my-2 mx-auto btn btn-outline-light">Figma</div>
+          <div class="my-2 mx-auto btn btn-outline-light">Krita</div>
+        </div>
+        <div class="row d-block">
+          <h3>Web Development</h3>
+          <div class="my-2 mx-auto btn btn-outline-light">HTML</div>
+          <div class="my-2 mx-auto btn btn-outline-light">CSS</div>
+          <div class="my-2 mx-auto btn btn-outline-light">JavaScript</div>
+          <div class="my-2 mx-auto btn btn-outline-light">TypeScript</div>
+          <div class="my-2 mx-auto btn btn-outline-light">Bootstrap</div>
+          <div class="my-2 mx-auto btn btn-outline-light">ReactJS</div>
+          <div class="my-2 mx-auto btn btn-outline-light">react-bootstrap</div>
+          <div class="my-2 mx-auto btn btn-outline-light">ReactNative</div>
+          <div class="my-2 mx-auto btn btn-outline-light">
+            GSAP animation library
+          </div>
+        </div>
+        <div class="row d-block">
+          <h3>Developer Tools</h3>
+          <div class="my-2 mx-auto btn btn-outline-light">Git</div>
+          <div class="my-2 mx-auto btn btn-outline-light">Expo</div>
+        </div>
+        <div class="row d-block">
+          <h3>Automation</h3>
+          <div class="my-2 mx-auto btn btn-outline-light">UiPath</div>
+          <div class="my-2 mx-auto btn btn-outline-light">C#</div>
+          <div class="my-2 mx-auto btn btn-outline-light">VB</div>
+          <div class="my-2 mx-auto btn btn-outline-light">Linux</div>
+          <div class="my-2 mx-auto btn btn-outline-light">Python</div>
+        </div>
+      </div>
+    </footer>
 
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
 
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenMax.min.js"
+      integrity="sha512-ia1SI1AX8rsFOd2+7ZKAcdYIQR3dNWYWWtINJs3L65GF4vZhXyNu96SOd3MYTp5ZSOXoGl/kwWjUdqOXe1osIA=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TimelineMax.min.js"
+      integrity="sha512-Fien2rCWak/F9Cb8pFz2Yu5U1ZmHFousYCTWFCDM6A/iaAqwXywT7Old2dthLQ02If7PigKQbIgzKx17an7o/A=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
+    <script src="AnimationsGSAP.js"></script>
 
-			<footer id="skills" class="" >
-
-	
-				<div class="m-5 p-5 border border-dark rounded ">
-					<div class="row d-block">
-						<h3>Design</h3>
-						<div class="my-2 mx-auto btn btn-outline-light">Figma</div>
-						<div class="my-2 mx-auto btn btn-outline-light">Krita</div>
-					</div>
-					<div class="row d-block">
-						<h3>Web Development</h3>
-						<div class="my-2 mx-auto btn btn-outline-light">HTML</div>
-						<div class="my-2 mx-auto btn btn-outline-light">CSS</div>
-						<div class="my-2 mx-auto btn btn-outline-light">JavaScript</div>
-						<div class="my-2 mx-auto btn btn-outline-light">TypeScript</div>
-						<div class="my-2 mx-auto btn btn-outline-light">Bootstrap</div>
-						<div class="my-2 mx-auto btn btn-outline-light">ReactJS</div>
-						<div class="my-2 mx-auto btn btn-outline-light">react-bootstrap</div>
-						<div class="my-2 mx-auto btn btn-outline-light">ReactNative</div>
-						<div class="my-2 mx-auto btn btn-outline-light">GSAP animation library</div>
-	
-					</div>
-					<div class="row d-block">
-						<h3>Developer Tools</h3>
-						<div class="my-2 mx-auto btn btn-outline-light">Git</div>
-						<div class="my-2 mx-auto btn btn-outline-light">Expo</div>
-
-					</div>
-					<div class="row d-block">
-						<h3>Automation</h3>
-						<div class="my-2 mx-auto btn btn-outline-light">UiPath</div>
-						<div class="my-2 mx-auto btn btn-outline-light">C#</div>
-						<div class="my-2 mx-auto btn btn-outline-light">VB</div>
-						<div class="my-2 mx-auto btn btn-outline-light">Linux</div>
-						<div class="my-2 mx-auto btn btn-outline-light">Python</div>
-					</div>
-				</div>
-
-			</footer>
-
-			<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-			<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenMax.min.js" 
-			integrity="sha512-ia1SI1AX8rsFOd2+7ZKAcdYIQR3dNWYWWtINJs3L65GF4vZhXyNu96SOd3MYTp5ZSOXoGl/kwWjUdqOXe1osIA==" 
-			crossorigin="anonymous"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TimelineMax.min.js" 
-			integrity="sha512-Fien2rCWak/F9Cb8pFz2Yu5U1ZmHFousYCTWFCDM6A/iaAqwXywT7Old2dthLQ02If7PigKQbIgzKx17an7o/A==" 
-			crossorigin="anonymous"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
-			<script src="AnimationsGSAP.js"></script>
-
-			<script>
-/*
+    <script>
+      /*
 							<div class="card mono" style="background-color: rgba(11,11,11,1);">
 								<a target="_blank" href="MyProjects/FrontEnd/DragDrop/dragdrop.html" title="See how it works">
 									<span class="">Drag And Drop</span>
@@ -293,7 +455,6 @@
 							</div>
 
 */
-			</script>
-	
-	</body>
+    </script>
+  </body>
 </html>

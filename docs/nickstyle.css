@@ -114,3 +114,6 @@ img:hover{
     transform: scale(1.05);
     transition: transform 0.3s ease;
   }
+
+  @media (min-width: 0px){		.jumbotron-view-height{ height:85vh;	}		}
+  @media (min-width: 576px){		.jumbotron-view-height{ height:92vh;	}		}
