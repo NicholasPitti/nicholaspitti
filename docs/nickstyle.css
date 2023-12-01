@@ -32,7 +32,8 @@ li.important{
 
 
 .custom-opacity {
-    background-color: rgba(0, 0, 0, 0.5); /* Change opacity value as needed */
+    /*background-color: rgba(0, 0, 0, 0.5);  Change opacity value as needed */
+    background-color: #0d0d0d;
 }
 
 .mono{
