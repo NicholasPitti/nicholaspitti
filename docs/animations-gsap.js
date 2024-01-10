@@ -59,8 +59,8 @@ function animateCubes() {
   });
 
   scene.addEventListener('mouseleave', () => {
-    timelineContact.pause();
-    timelineHero.pause();
+    //timelineContact.pause();
+    //timelineHero.pause();
   });
   
   // Resume timelines on mouse enter
