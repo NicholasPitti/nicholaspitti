@@ -1,7 +1,7 @@
 var elements = ["#element1", "#element2", "#element3"];
 
 var template = Handlebars.compile('<div>{{name}}</div>');
-var data = { name: 'John' };
+var data = { name: 'Nick' };
 var html = template(data);
 document.body.innerHTML = html;
 
