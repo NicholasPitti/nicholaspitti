@@ -14,7 +14,7 @@ var timelineFooter = gsap.timeline({
 });
 
 timelineFooter.to(elements, {
-    x: "75%",
+    x: "50%",
     marginRight: "auto",
     duration: 1,
     stagger: 0.5 // adds a delay between each element animation

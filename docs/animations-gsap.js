@@ -1,13 +1,7 @@
+/*
 var timelineContact = gsap.timeline({
   scrollTrigger: {
     trigger: ".contact",
-    toggleActions: "restart none restart none"
-  }
-});
-
-var timelineHero = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".hero",
     toggleActions: "restart none restart none"
   }
 });
@@ -17,7 +11,16 @@ timelineContact.to(".contact", {
   marginLeft: "auto",
   duration: 1.5
 });
-/* Left to right animation for contact */
+// Left to right animation for contact 
+*/
+
+var timelineHero = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".hero",
+    toggleActions: "restart none restart none"
+  }
+});
+
 
 const numberOfRectangles = 4;
 
@@ -69,4 +72,5 @@ function animateRectangles() {
     timelineHero.play();
   });
 }
+
 animateRectangles();
