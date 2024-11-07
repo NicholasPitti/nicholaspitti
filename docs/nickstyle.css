@@ -162,3 +162,9 @@ p:hover {
         height: 92vh;
     }
 }
+
+@media (max-width: 375px) {
+    .description {
+        font-size: 1rem;
+    }
+}
