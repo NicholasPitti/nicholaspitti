@@ -63,12 +63,12 @@ function animateRectangles() {
 
   scene.addEventListener('mouseleave', () => {
     //timelineContact.pause();
-    //timelineHero.pause();
+    timelineHero.pause();
   });
 
   // Resume timelines on mouse enter
   scene.addEventListener('mouseenter', () => {
-    timelineContact.play();
+    //timelineContact.play();
     timelineHero.play();
   });
 }

@@ -163,7 +163,7 @@ p:hover {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 576px) {
     .description {
         font-size: 1rem;
     }
